@@ -61,6 +61,11 @@
       <DependentUpon>DirectoryVerification.feature</DependentUpon>
     </Compile>
     <Compile Include="DirectoryVerificationSteps.cs" />
+    <Compile Include="FileVerification.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileVerification.feature</DependentUpon>
+    </Compile>
     <Compile Include="FileVerificationSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceVerification.feature.cs">
@@ -80,6 +85,10 @@
     <None Include="DirectoryVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DirectoryVerification.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FileVerification.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FileVerification.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="ServiceVerification.feature">

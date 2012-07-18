@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DatabaseVerifier.cs" />
     <Compile Include="DirectoryVerifier.cs" />
+    <Compile Include="FileVerifier.cs" />
     <Compile Include="IResourceVerifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceVerifier.cs" />
