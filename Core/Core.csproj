@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseVerifier.cs" />
+    <Compile Include="DirectoryVerifier.cs" />
     <Compile Include="IResourceVerifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceVerifier.cs" />
     <Compile Include="ServiceVerifier.cs" />
     <Compile Include="VerificationResult.cs" />
   </ItemGroup>

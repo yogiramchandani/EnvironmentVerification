@@ -75,7 +75,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have a new ServiceVerifier");
 #line 8
- testRunner.When("I add a service connection that exists");
+ testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
 #line 9
  testRunner.Then("the result message should be Passed connecting to Levy WCF Service, connection st" +
                     "ring : PPF.Levy.WCFHost");
@@ -93,7 +93,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.Given("I have a new ServiceVerifier");
 #line 13
- testRunner.When("I add a service connection that exists");
+ testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
 #line 14
  testRunner.Then("the result status should be True");
 #line hidden
@@ -110,7 +110,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Given("I have a new ServiceVerifier");
 #line 18
- testRunner.When("I add a service connection that exists");
+ testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
 #line 19
  testRunner.Then("the result count should be 1");
 #line hidden
@@ -127,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.Given("I have a new ServiceVerifier");
 #line 23
- testRunner.When("I add a service connection that does not exists");
+ testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 24
  testRunner.Then("the result message should be Failed connecting to Invalid Service, connection str" +
                     "ing : PPF.Levy.Invalid");
@@ -145,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Given("I have a new ServiceVerifier");
 #line 28
- testRunner.When("I add a service connection that does not exists");
+ testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 29
  testRunner.Then("the result status should be False");
 #line hidden
@@ -162,7 +162,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 32
  testRunner.Given("I have a new ServiceVerifier");
 #line 33
- testRunner.When("I add a service connection that does not exists");
+ testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 34
  testRunner.Then("the result count should be 1");
 #line hidden
@@ -179,11 +179,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 37
  testRunner.Given("I have a new ServiceVerifier");
 #line 38
- testRunner.When("I add a service connection that exists");
+ testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
 #line 39
- testRunner.When("I add a service connection that does not exists");
+ testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 40
- testRunner.When("I add a service connection that does not exists");
+ testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 41
  testRunner.Then("the result count should be 3");
 #line hidden

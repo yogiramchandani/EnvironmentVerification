@@ -75,7 +75,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have a new DatabaseVerifier");
 #line 8
- testRunner.When("I add a DataBase connection that exists");
+ testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
+                    "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 9
  testRunner.Then("the first result message on the screen should be Passed connecting to Nirvana, co" +
                     "nnection string : Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Sec" +
@@ -94,7 +95,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.Given("I have a new DatabaseVerifier");
 #line 13
- testRunner.When("I add a DataBase connection that exists");
+ testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
+                    "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 14
  testRunner.Then("the first result verification on the screen should be True");
 #line hidden
@@ -111,7 +113,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Given("I have a new DatabaseVerifier");
 #line 18
- testRunner.When("I add a DataBase connection that exists");
+ testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
+                    "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 19
  testRunner.Then("the count of messages should be 1");
 #line hidden
@@ -128,7 +131,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.Given("I have a new DatabaseVerifier");
 #line 23
- testRunner.When("I add a DataBase connection that does not exist");
+ testRunner.When("I add the DataBase connection name: NirvanaNotExists, connection: Data Source=.\\C" +
+                    "DR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line 24
  testRunner.Then("the first result message on the screen should be Failed connecting to NirvanaNotE" +
                     "xists, connection string : Data Source=.\\CDR;Initial Catalog=nirvana_notExists;I" +
@@ -147,7 +151,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Given("I have a new DatabaseVerifier");
 #line 28
- testRunner.When("I add a DataBase connection that does not exist");
+ testRunner.When("I add the DataBase connection name: NirvanaNotExists, connection: Data Source=.\\C" +
+                    "DR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line 29
  testRunner.Then("the first result verification on the screen should be False");
 #line hidden
@@ -164,7 +169,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 32
  testRunner.Given("I have a new DatabaseVerifier");
 #line 33
- testRunner.When("I add a DataBase connection that does not exist");
+ testRunner.When("I add the DataBase connection name: NirvanaNotExists, connection: Data Source=.\\C" +
+                    "DR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line 34
  testRunner.Then("the count of messages should be 1");
 #line hidden
@@ -181,11 +187,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 37
  testRunner.Given("I have a new DatabaseVerifier");
 #line 38
- testRunner.When("I add a DataBase connection that exists");
+ testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
+                    "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 39
- testRunner.When("I add a DataBase connection that exists");
+ testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
+                    "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 40
- testRunner.When("I add a DataBase connection that does not exist");
+ testRunner.When("I add the DataBase connection name: NirvanaNotExists, connection: Data Source=.\\C" +
+                    "DR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line 41
  testRunner.Then("the count of messages should be 3");
 #line hidden

@@ -5,51 +5,35 @@ using System.Data.SqlClient;
 
 namespace Core
 {
-    public class DatabaseVerifier : IResourceVerifier
+    public class DatabaseVerifier : ResourceVerifier
     {
-        private IList<Tuple<string, string>> dbConnectionList;
-
-        public DatabaseVerifier()
+        protected override bool Verify(Tuple<string, string> tuple)
         {
-            dbConnectionList = new List<Tuple<string, string>>();
-        }
-
-        public void AddConnectionToVerify(string key, string connection)
-        {
-            dbConnectionList.Add(new Tuple<string, string>(key, connection));
-        }
-
-        public List<VerificationResult> GetVerificationStatus()
-        {
-            List<VerificationResult> result = new List<VerificationResult>();
-            SqlConnection connection = null;
             bool canConnect = false;
-
-            foreach (var tuple in dbConnectionList)
+            SqlConnection connection = null;
+            try
             {
-
-                try
+                connection = new SqlConnection(tuple.Item2);
+                using (connection)
                 {
-                    connection = new SqlConnection(tuple.Item2);
-                    using (connection)
+                    connection.Open();
+                    if ((connection.State & ConnectionState.Open) > 0)
                     {
-                        connection.Open();
-                        if ((connection.State & ConnectionState.Open) > 0)
-                        {
-                            canConnect = true;
-                        }
+                        canConnect = true;
                     }
-                }catch{}
-                finally
-                {
-                    if (connection != null) connection.Close();
                 }
-
-                string message = string.Format("{0} connecting to {1}, connection string : {2}", canConnect ? "Passed" : "Failed", tuple.Item1, tuple.Item2);
-                result.Add(new VerificationResult {CanConnect = canConnect, Message = message});
-                canConnect = false;
             }
-            return result;
+            catch{}
+            finally
+            {
+                if (connection != null) connection.Close();
+            }
+            return canConnect;
+        }
+
+        protected override string ConstructMessage(Tuple<string, string> tuple, bool canConnect)
+        {
+            return string.Format("{0} connecting to {1}, connection string : {2}", canConnect ? "Passed" : "Failed", tuple.Item1, tuple.Item2);
         }
     }
 }

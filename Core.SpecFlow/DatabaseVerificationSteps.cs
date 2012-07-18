@@ -15,18 +15,12 @@ namespace Core.SpecFlow
             _verifier = new DatabaseVerifier();
         }
 
-        [When("I add a DataBase connection that exists")]
-        public void WhenIAddADatabaseConnectionThatIsPresent()
+        [When("I add the DataBase connection name: (.*), connection: (.*)")]
+        public void WhenIAddADatabaseConnection(string name, string connection)
         {
-            _verifier.AddConnectionToVerify("Nirvana", @"Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI");
+            _verifier.AddConnectionToVerify(name, connection);
         }
-
-        [When("I add a DataBase connection that does not exist")]
-        public void WhenIAddADatabaseConnectionThatIsNotPresent()
-        {
-            _verifier.AddConnectionToVerify("NirvanaNotExists", @"Data Source=.\CDR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
-        }
-
+        
         [Then("the first result message on the screen should be (.*)")]
         public void ThenTheFirstResultMessageShouldBe(string result)
         {

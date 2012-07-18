@@ -15,16 +15,10 @@ namespace Core.SpecFlow
             _verifier = new ServiceVerifier();
         }
 
-        [When("I add a service connection that exists")]
-        public void WhenIAddAServiceConnectionThatIsPresent()
+        [When("I add a service connection name: (.*), connection: (.*)")]
+        public void WhenIAddAServiceConnection(string name, string connection)
         {
-            _verifier.AddConnectionToVerify("Levy WCF Service", "PPF.Levy.WCFHost");
-        }
-
-        [When("I add a service connection that does not exists")]
-        public void WhenIAddAServiceConnectionThatIsNotPresent()
-        {
-            _verifier.AddConnectionToVerify("Invalid Service", "PPF.Levy.Invalid");
+            _verifier.AddConnectionToVerify(name, connection);
         }
 
         [Then("the result message should be (.*)")]
