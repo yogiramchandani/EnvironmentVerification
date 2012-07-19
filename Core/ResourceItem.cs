@@ -1,4 +1,4 @@
-namespace Core.SpecFlow
+namespace Core
 {
     public class ResourceItem : IResourceItem<string>
     {

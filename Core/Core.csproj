@@ -46,7 +46,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnvironmentVerificationProcessor.cs" />
+    <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />
     <Compile Include="Verifiers\FileVerifier.cs" />
@@ -55,7 +55,7 @@
     <Compile Include="ResourceItem.cs" />
     <Compile Include="Verifiers\AbstractResourceVerifier.cs" />
     <Compile Include="Verifiers\ServiceVerifier.cs" />
-    <Compile Include="TypeStringResourceVerifierFactory.cs" />
+    <Compile Include="StringTypeResourceVerifierFactory.cs" />
     <Compile Include="Verifiers\UnknownVerifier.cs" />
     <Compile Include="VerificationResult.cs" />
   </ItemGroup>

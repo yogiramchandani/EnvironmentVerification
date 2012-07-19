@@ -7,9 +7,9 @@ namespace Core
 {
     public class DatabaseVerifier : AbstractResourceVerifier
     {
-        protected override bool Verify(Tuple<string, string> tuple)
+        protected override ResultType Verify(Tuple<string, string> tuple)
         {
-            bool canConnect = false;
+            ResultType resultType = ResultType.Failure;
             SqlConnection connection = null;
             try
             {
@@ -19,7 +19,7 @@ namespace Core
                     connection.Open();
                     if ((connection.State & ConnectionState.Open) > 0)
                     {
-                        canConnect = true;
+                        resultType = ResultType.Success;
                     }
                 }
             }
@@ -28,12 +28,13 @@ namespace Core
             {
                 if (connection != null) connection.Close();
             }
-            return canConnect;
+            return resultType;
         }
 
-        protected override string ConstructMessage(Tuple<string, string> tuple, bool canConnect)
+        protected override string ConstructMessage(Tuple<string, string> tuple, ResultType resultType)
         {
-            return string.Format("{0} connecting to {1}, connection string : {2}", canConnect ? "Passed" : "Failed", tuple.Item1, tuple.Item2);
+
+            return string.Format("{0} connecting to {1}, connection string : {2}", resultType.ToString(), tuple.Item1, tuple.Item2);
         }
     }
 }

@@ -23,15 +23,23 @@ namespace Core
             
             foreach (var tuple in connectionList)
             {
-                bool canConnect = Verify(tuple);
+                ResultType resultType = Verify(tuple);
 
-                string message = ConstructMessage(tuple, canConnect);
-                result.Add(new VerificationResult {CanConnect = canConnect, Message = message});
+                string message = ConstructMessage(tuple, resultType);
+                result.Add(new VerificationResult {Type = resultType, Message = message});
             }
             return result;
         }
 
-        protected abstract bool Verify(Tuple<string, string> tuple);
-        protected abstract string ConstructMessage(Tuple<string, string> tuple, bool canConnect);
+        protected abstract ResultType Verify(Tuple<string, string> tuple);
+        protected abstract string ConstructMessage(Tuple<string, string> tuple, ResultType canConnect);
+    }
+
+    public enum ResultType
+    {
+        Success,
+        Failure,
+        Warning,
+        Info
     }
 }

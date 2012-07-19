@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.4.2.0\lib\NET40\NSubstitute.dll</HintPath>
     </Reference>
@@ -49,59 +52,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseVerification.feature.cs">
+    <Compile Include="JsonResourceItemProcessor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonResourceItemProcessor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="JsonResourceItemProcessorSteps.cs" />
+    <Compile Include="Verifiers\DatabaseVerification.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseVerification.feature</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseVerificationSteps.cs" />
-    <Compile Include="DirectoryVerification.feature.cs">
+    <Compile Include="Verifiers\DatabaseVerificationSteps.cs" />
+    <Compile Include="Verifiers\DirectoryVerification.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DirectoryVerification.feature</DependentUpon>
     </Compile>
-    <Compile Include="DirectoryVerificationSteps.cs" />
-    <Compile Include="EnvironmentVerificationProcessor.feature.cs">
+    <Compile Include="Verifiers\DirectoryVerificationSteps.cs" />
+    <Compile Include="VerificationProcessor.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EnvironmentVerificationProcessor.feature</DependentUpon>
+      <DependentUpon>VerificationProcessor.feature</DependentUpon>
     </Compile>
-    <Compile Include="FileVerification.feature.cs">
+    <Compile Include="Verifiers\FileVerification.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FileVerification.feature</DependentUpon>
     </Compile>
-    <Compile Include="FileVerificationSteps.cs" />
-    <Compile Include="EnvironmentVerificationProcessSteps.cs" />
+    <Compile Include="Verifiers\FileVerificationSteps.cs" />
+    <Compile Include="VerificationProcessSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceVerification.feature.cs">
+    <Compile Include="Verifiers\ServiceVerification.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceVerification.feature</DependentUpon>
     </Compile>
     <Compile Include="SpecFlowNUnitExtension.cs" />
-    <Compile Include="ServiceVerificationSteps.cs" />
+    <Compile Include="Verifiers\ServiceVerificationSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DatabaseVerification.feature">
+    <None Include="JsonResourceItemProcessor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonResourceItemProcessor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Verifiers\DatabaseVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DatabaseVerification.feature.cs</LastGenOutput>
     </None>
-    <None Include="DirectoryVerification.feature">
+    <None Include="Verifiers\DirectoryVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DirectoryVerification.feature.cs</LastGenOutput>
     </None>
-    <None Include="EnvironmentVerificationProcessor.feature">
+    <None Include="VerificationProcessor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EnvironmentVerificationProcessor.feature.cs</LastGenOutput>
+      <LastGenOutput>VerificationProcessor.feature.cs</LastGenOutput>
     </None>
-    <None Include="FileVerification.feature">
+    <None Include="Verifiers\FileVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FileVerification.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="ServiceVerification.feature">
+    <None Include="Verifiers\ServiceVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ServiceVerification.feature.cs</LastGenOutput>
     </None>
