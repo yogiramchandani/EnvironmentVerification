@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -46,6 +49,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IResourceItemProcessor.cs" />
+    <Compile Include="JsonResourceItemProcessor.cs" />
     <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using NUnit.Framework;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using TechTalk.SpecFlow;
 
 namespace Core.SpecFlow
@@ -39,32 +34,5 @@ namespace Core.SpecFlow
             var actual = _processor.GetResourceList();
             Assert.AreEqual(actual.Count(x => x.ItemType == type), count);
         }
-    }
-
-    public class JsonResourceItemProcessor : IResourceItemProcessor<string, string>
-    {
-        private List<IResourceItem<string>> _resourceList;
-
-        public JsonResourceItemProcessor()
-        {
-            _resourceList = new List<IResourceItem<string>>();
-        }
-
-        public void ParseResourceItems(string json)
-        {
-            var list = JsonConvert.DeserializeObject<List<ResourceItem>>(json);
-            _resourceList.AddRange(list);
-        }
-
-        public List<IResourceItem<string>> GetResourceList()
-        {
-            return _resourceList;
-        }
-    }
-
-    public interface IResourceItemProcessor<TResourceType, TFormat>
-    {
-        void ParseResourceItems(TFormat json);
-        List<IResourceItem<TResourceType>> GetResourceList();
     }
 }
