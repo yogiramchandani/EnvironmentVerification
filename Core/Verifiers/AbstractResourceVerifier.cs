@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    public abstract class ResourceVerifier : IResourceVerifier
+    public abstract class AbstractResourceVerifier : IResourceVerifier
     {
         protected IList<Tuple<string, string>> connectionList;
 
-        protected ResourceVerifier()
+        protected AbstractResourceVerifier()
         {
             connectionList = new List<Tuple<string, string>>();
         }

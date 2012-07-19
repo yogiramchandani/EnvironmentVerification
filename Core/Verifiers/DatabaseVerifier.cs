@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace Core
 {
-    public class DatabaseVerifier : ResourceVerifier
+    public class DatabaseVerifier : AbstractResourceVerifier
     {
         protected override bool Verify(Tuple<string, string> tuple)
         {

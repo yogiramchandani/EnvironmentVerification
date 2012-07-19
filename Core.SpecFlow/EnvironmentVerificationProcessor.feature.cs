@@ -146,6 +146,166 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When 4 Valid Duplicates are passed, check return value")]
+        public virtual void When4ValidDuplicatesArePassedCheckReturnValue()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When 4 Valid Duplicates are passed, check return value", ((string[])(null)));
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 29
+ testRunner.Given("I have a new EnvironmentVerificationProcessor");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "type",
+                        "name",
+                        "location"});
+            table4.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+            table4.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+            table4.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+            table4.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+#line 30
+ testRunner.When("I add items for processing", ((string)(null)), table4);
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "canConnect",
+                        "message"});
+            table5.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+            table5.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+            table5.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+            table5.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+#line 36
+ testRunner.Then("the Environment Verification Processor result should be", ((string)(null)), table5);
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When 2 Valid Duplicates are passed for all types, check return value")]
+        public virtual void When2ValidDuplicatesArePassedForAllTypesCheckReturnValue()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When 2 Valid Duplicates are passed for all types, check return value", ((string[])(null)));
+#line 43
+this.ScenarioSetup(scenarioInfo);
+#line 44
+ testRunner.Given("I have a new EnvironmentVerificationProcessor");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "type",
+                        "name",
+                        "location"});
+            table6.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+            table6.AddRow(new string[] {
+                        "File",
+                        "Template",
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+            table6.AddRow(new string[] {
+                        "Directory",
+                        "TemplateDirectory",
+                        "D:\\AppShare\\DataSuite\\Templates"});
+            table6.AddRow(new string[] {
+                        "Directory",
+                        "TemplateDirectory",
+                        "D:\\AppShare\\DataSuite\\Templates"});
+            table6.AddRow(new string[] {
+                        "Database",
+                        "Nirvana",
+                        "Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI"});
+            table6.AddRow(new string[] {
+                        "Database",
+                        "Marshal",
+                        "Data Source=.\\CDR;Initial Catalog=marshal;Integrated Security=SSPI"});
+            table6.AddRow(new string[] {
+                        "WindowsService",
+                        "WinService1",
+                        "PPF.Levy.WCFHost"});
+            table6.AddRow(new string[] {
+                        "WindowsService",
+                        "WinService2",
+                        "PPF.Levy.WCFHost"});
+            table6.AddRow(new string[] {
+                        "Invalid",
+                        "Invalid1",
+                        "InvalidLocation1"});
+            table6.AddRow(new string[] {
+                        "Invalid",
+                        "Invalid2",
+                        "InvalidLocation2"});
+#line 45
+ testRunner.When("I add items for processing", ((string)(null)), table6);
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "canConnect",
+                        "message"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, file path: D:\\AppShare\\DataSuite\\Templates\\UtilFu" +
+                            "nctions.xslt"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, path: D:\\AppShare\\DataSuite\\Templates"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Templates, path: D:\\AppShare\\DataSuite\\Templates"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Nirvana, connection string : Data Source=.\\CDR;Initial Catal" +
+                            "og=nirvana_small;Integrated Security=SSPI"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to Marshal, connection string : Data Source=.\\CDR;Initial Catal" +
+                            "og=marshal;Integrated Security=SSPI"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to WinService1, connection string : PPF.Levy.WCFHost"});
+            table7.AddRow(new string[] {
+                        "True",
+                        "Passed connecting to WinService2, connection string : PPF.Levy.WCFHost"});
+            table7.AddRow(new string[] {
+                        "False",
+                        "Failed, Could not find a valid verifier for name: Invalid1, location: InvalidLoca" +
+                            "tion1"});
+            table7.AddRow(new string[] {
+                        "False",
+                        "Failed, Could not find a valid verifier for name: Invalid2, location: InvalidLoca" +
+                            "tion2"});
+#line 57
+ testRunner.Then("the Environment Verification Processor result should be", ((string)(null)), table7);
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

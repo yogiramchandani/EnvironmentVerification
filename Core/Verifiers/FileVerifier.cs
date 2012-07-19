@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Core
 {
-    public class FileVerifier : ResourceVerifier
+    public class FileVerifier : AbstractResourceVerifier
     { 
         protected override bool Verify(Tuple<string, string> tuple)
         {

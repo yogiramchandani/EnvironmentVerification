@@ -5,7 +5,7 @@ using System.ServiceProcess;
 
 namespace Core
 {
-    public class ServiceVerifier : ResourceVerifier
+    public class ServiceVerifier : AbstractResourceVerifier
     {
         ServiceController[] services;
 

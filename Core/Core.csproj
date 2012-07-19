@@ -46,15 +46,20 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseVerifier.cs" />
-    <Compile Include="DirectoryVerifier.cs" />
-    <Compile Include="FileVerifier.cs" />
+    <Compile Include="EnvironmentVerificationProcessor.cs" />
+    <Compile Include="Verifiers\DatabaseVerifier.cs" />
+    <Compile Include="Verifiers\DirectoryVerifier.cs" />
+    <Compile Include="Verifiers\FileVerifier.cs" />
     <Compile Include="IResourceVerifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourceVerifier.cs" />
-    <Compile Include="ServiceVerifier.cs" />
+    <Compile Include="ResourceItem.cs" />
+    <Compile Include="Verifiers\AbstractResourceVerifier.cs" />
+    <Compile Include="Verifiers\ServiceVerifier.cs" />
+    <Compile Include="TypeStringResourceVerifierFactory.cs" />
+    <Compile Include="Verifiers\UnknownVerifier.cs" />
     <Compile Include="VerificationResult.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
