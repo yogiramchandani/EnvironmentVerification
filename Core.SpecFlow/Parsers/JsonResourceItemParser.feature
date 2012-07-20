@@ -1,4 +1,4 @@
-﻿Feature: Json Resource Item Processor
+﻿Feature: Json Resource Item Parser
 	In order to process a Json string
 	As a service user 
 	I want to be provided a list of all the parsed Resource item lists

@@ -10,15 +10,6 @@ namespace Core.SpecFlow
     {
         private FileVerifier _verifier;
 
-        [StepArgumentTransformation("Result Type Enum (.*)")]
-        public ResultType TransformResultTypeEnum(string resultTypeString)
-        {
-            ResultType resultType;
-            Enum.TryParse(resultTypeString, true, out resultType);
-            return resultType;
-        }
-
-
         [Given("I have a new FileVerifier")]
         public void GivenAFileVerifier()
         {

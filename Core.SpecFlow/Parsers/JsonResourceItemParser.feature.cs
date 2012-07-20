@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Core.SpecFlow
+namespace Core.SpecFlow.Parsers
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace Core.SpecFlow
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.8.1.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Json Resource Item Processor")]
-    public partial class JsonResourceItemProcessorFeature
+    [NUnit.Framework.DescriptionAttribute("Json Resource Item Parser")]
+    public partial class JsonResourceItemParserFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "JsonResourceItemProcessor.feature"
+#line 1 "JsonResourceItemParser.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Json Resource Item Processor", "In order to process a Json string\r\nAs a service user \r\nI want to be provided a li" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Json Resource Item Parser", "In order to process a Json string\r\nAs a service user \r\nI want to be provided a li" +
                     "st of all the parsed Resource item lists", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }

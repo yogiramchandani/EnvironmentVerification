@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace Core.SpecFlow
 {
     [Binding]
-    public class JsonResourceItemProcessorSteps
+    public class JsonResourceItemParserSteps
     {
         JsonResourceItemParser _parser;
 

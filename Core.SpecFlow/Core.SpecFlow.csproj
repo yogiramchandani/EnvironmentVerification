@@ -49,13 +49,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonFileParserSteps.cs" />
-    <Compile Include="JsonResourceItemProcessor.feature.cs">
+    <Compile Include="FileReader.cs" />
+    <Compile Include="FileReader.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JsonResourceItemProcessor.feature</DependentUpon>
+      <DependentUpon>FileReader.feature</DependentUpon>
     </Compile>
-    <Compile Include="JsonResourceItemProcessorSteps.cs" />
+    <Compile Include="FileReaderSteps.cs" />
+    <Compile Include="Parsers\JsonResourceItemParser.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonResourceItemParser.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Parsers\JsonResourceItemParserSteps.cs" />
+    <Compile Include="StringFunctions.cs" />
     <Compile Include="Verifiers\DatabaseVerification.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,9 +98,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="JsonResourceItemProcessor.feature">
+    <None Include="FileReader.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>JsonResourceItemProcessor.feature.cs</LastGenOutput>
+      <LastGenOutput>FileReader.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Parsers\JsonResourceItemParser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonResourceItemParser.feature.cs</LastGenOutput>
     </None>
     <None Include="Verifiers\DatabaseVerification.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -122,6 +133,9 @@
       <Project>{8CB5B186-8F99-4E29-ACD0-1579A8B7D998}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleFiles\ValidFile.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

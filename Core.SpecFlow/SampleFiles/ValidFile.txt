@@ -1,0 +1,7 @@
+﻿[
+	{
+		"ItemType":"File",
+		"Identifier":"File1",
+		"Location":"FileLocation1"
+	}
+]
