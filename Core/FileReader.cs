@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Core.SpecFlow
+namespace Core
 {
     public class FileReader : IFileReader
     {
@@ -32,12 +32,6 @@ namespace Core.SpecFlow
                 return new ValidationResult {Message = e.Message, Type = ResultType.Failure};
             }
         }
-    }
-
-    public class ValidationResult
-    {
-        public ResultType Type { get; set; }
-        public string Message { get; set; }
     }
 
     public interface IFileReader
