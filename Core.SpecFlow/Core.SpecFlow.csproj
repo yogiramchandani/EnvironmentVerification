@@ -61,7 +61,6 @@
       <DependentUpon>JsonResourceItemParser.feature</DependentUpon>
     </Compile>
     <Compile Include="Parsers\JsonResourceItemParserSteps.cs" />
-    <Compile Include="StringFunctions.cs" />
     <Compile Include="AbstractSteps.cs" />
     <Compile Include="Verifiers\DatabaseVerification.feature.cs">
       <AutoGen>True</AutoGen>

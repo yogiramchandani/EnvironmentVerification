@@ -24,7 +24,7 @@ namespace Core
         }
     }
 
-    public interface IResourceVerifierFactory<in T>
+    public interface IResourceVerifierFactory<T>
     {
         IResourceVerifier GetVerifier(T type);
     }

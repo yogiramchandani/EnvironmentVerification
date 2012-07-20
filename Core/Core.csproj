@@ -49,10 +49,11 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractParser.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="Parsers\IResourceItemParser.cs" />
     <Compile Include="Parsers\JsonResourceItemParser.cs" />
-    <Compile Include="Model\ValidationResult.cs" />
+    <Compile Include="StringFunctions.cs" />
     <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />

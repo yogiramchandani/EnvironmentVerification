@@ -14,27 +14,35 @@ namespace Core.SpecFlow
             ScenarioContext.Current.Set(parser);
         }
 
-        [When("I add Json objects for processing (.*)")]
+        [When(@"I add string for Json processing ""(.*)""")]
         public void WhenIAddJsonItemsForProcessing(string json)
         {
             var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
-            parser.ParseResourceItems(json);
+            VerificationResult result = parser.ParseResourceItems(json);
+            ScenarioContext.Current.Set(result);
+        }
+
+        [Then(@"the Json result type should be (.*)")]
+        public void ThenTheJsonResultTypeShouldBe(ResultType expected)
+        {
+            var result = ScenarioContext.Current.Get<VerificationResult>();
+            Assert.AreEqual(expected, result.Type);
         }
 
         [Then("the Json result should have a count of (.*)")]
         public void ThenTheJsonParseResultCountShouldBe(int expected)
         {
             var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
-            var actual = parser.GetResourceList();
-            Assert.AreEqual(actual.Count, expected);
+            var actual = parser.ResourceList;
+            Assert.AreEqual(expected, actual.Count);
         }
 
         [Then("the Json result for type (.*) should have a count of (.*)")]
         public void ThenTheJsonParseResultTypeCountShouldBe(string type, int count)
         {
             var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
-            var actual = parser.GetResourceList();
-            Assert.AreEqual(actual.Count(x => x.ItemType == type), count);
+            var actual = parser.ResourceList;
+            Assert.AreEqual(count, actual.Count(x => x.ItemType == type));
         }
     }
 }

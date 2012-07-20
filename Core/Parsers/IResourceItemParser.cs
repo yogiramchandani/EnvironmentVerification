@@ -4,7 +4,7 @@ namespace Core
 {
     public interface IResourceItemParser<TResourceType, TFormat>
     {
-        void ParseResourceItems(TFormat raw);
-        List<IResourceItem<TResourceType>> GetResourceList();
+        VerificationResult ParseResourceItems(TFormat raw);
+        List<IResourceItem<TResourceType>> ResourceList { get; set; }
     }
 }

@@ -75,12 +75,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have a new JsonResourceItemProcessor");
 #line 8
- testRunner.When("I add Json objects for processing [{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Locat" +
+ testRunner.When("I add string for Json processing \"[{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Locat" +
                     "ion\":\"FileLocation1\"},{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Location\":\"FileLo" +
-                    "cation1\"},{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Location\":\"FileLocation1\"}]");
+                    "cation1\"},{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Location\":\"FileLocation1\"}]\"");
 #line 9
- testRunner.Then("the Json result should have a count of 3");
+ testRunner.Then("the Json result type should be Success");
 #line 10
+ testRunner.Then("the Json result should have a count of 3");
+#line 11
  testRunner.Then("the Json result for type File should have a count of 3");
 #line hidden
             this.ScenarioCleanup();
@@ -91,21 +93,69 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void WhenAValidJsonStringIsPassedWith1FileAnd2DirectoryCheckCount()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a valid Json string is passed with 1 File and 2 Directory, check count", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
 #line 13
- testRunner.Given("I have a new JsonResourceItemProcessor");
+this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.When("I add Json objects for processing [{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Locat" +
+ testRunner.Given("I have a new JsonResourceItemProcessor");
+#line 15
+ testRunner.When("I add string for Json processing \"[{\"ItemType\":\"File\",\"Identifier\":\"File1\",\"Locat" +
                     "ion\":\"FileLocation1\"},{\"ItemType\":\"Directory\",\"Identifier\":\"File1\",\"Location\":\"F" +
                     "ileLocation1\"},{\"ItemType\":\"Directory\",\"Identifier\":\"File1\",\"Location\":\"FileLoca" +
-                    "tion1\"}]");
-#line 15
- testRunner.Then("the Json result should have a count of 3");
+                    "tion1\"}]\"");
 #line 16
- testRunner.Then("the Json result for type File should have a count of 1");
+ testRunner.Then("the Json result type should be Success");
 #line 17
+ testRunner.Then("the Json result should have a count of 3");
+#line 18
+ testRunner.Then("the Json result for type File should have a count of 1");
+#line 19
  testRunner.Then("the Json result for type Directory should have a count of 2");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When a valid Json string is passed with 1 File and 2 Directory including a \\, che" +
+            "ck count")]
+        public virtual void WhenAValidJsonStringIsPassedWith1FileAnd2DirectoryIncludingACheckCount()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a valid Json string is passed with 1 File and 2 Directory including a \\, che" +
+                    "ck count", ((string[])(null)));
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+ testRunner.Given("I have a new JsonResourceItemProcessor");
+#line 23
+ testRunner.When(@"I add string for Json processing ""[{""ItemType"" : ""File"",""Identifier"" : ""Templates"",""Location"" : ""D:\AppShare\DataSuite\Templates\UtilFunctions.xslt""}, {	""ItemType"" : ""Directory"",	""Identifier"" : ""TemplateDirectory"",		""Location"" : ""D:\AppShare\DataSuite\Templates""	}, 	{		""ItemType"" : ""WindowsService"",		""Identifier"" : ""LevyWCF"",		""Location"" : ""PPF.Levy.WCFHost""	}, 	{		""ItemType"" : ""Test"",		""Identifier"" : ""TestInvalid"",		""Location"" : ""PPF.Levy.WCFHost""	}]""");
+#line 24
+ testRunner.Then("the Json result type should be Success");
+#line 25
+ testRunner.Then("the Json result should have a count of 4");
+#line 26
+ testRunner.Then("the Json result for type File should have a count of 1");
+#line 27
+ testRunner.Then("the Json result for type Directory should have a count of 1");
+#line 28
+ testRunner.Then("the Json result for type WindowsService should have a count of 1");
+#line 29
+ testRunner.Then("the Json result for type Test should have a count of 1");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When a invalid Json string is passed expect an error")]
+        public virtual void WhenAInvalidJsonStringIsPassedExpectAnError()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a invalid Json string is passed expect an error", ((string[])(null)));
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line 32
+ testRunner.Given("I have a new JsonResourceItemProcessor");
+#line 33
+ testRunner.When("I add string for Json processing \"sdfsdfsdf sdfs dfsd fsd fsdf sdfsdf\"");
+#line 34
+ testRunner.Then("the Json result type should be Failure");
 #line hidden
             this.ScenarioCleanup();
         }
