@@ -49,12 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileReader.feature.cs">
+    <Compile Include="Parsers\FileReader.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FileReader.feature</DependentUpon>
     </Compile>
-    <Compile Include="FileReaderSteps.cs" />
+    <Compile Include="Parsers\FileReaderSteps.cs" />
     <Compile Include="Parsers\JsonResourceItemParser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="FileReader.feature">
+    <None Include="Parsers\FileReader.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FileReader.feature.cs</LastGenOutput>
     </None>

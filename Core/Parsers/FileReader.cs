@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Core
 {
-    public class FileParser : AbstractParser
+    public class FileParser : AbstractParser<Exception>
     {
         private string _filePath;
 
@@ -12,7 +12,7 @@ namespace Core
             _filePath = filePath;
         }
 
-        public override VerificationResult Execute()
+        protected override VerificationResult Execute()
         {
             if (!File.Exists(_filePath))
             {
@@ -27,14 +27,9 @@ namespace Core
             }
         }
 
-        public override string ConstructExceptionMessage(Exception e)
+        protected override string ConstructExceptionMessage(Exception e)
         {
             return string.Format("{0}: Error while parsing the file {1}, the exception thrown : {2}", ResultType.Failure, _filePath, e.Message);
         }
-    }
-
-    public interface IParser
-    {
-        VerificationResult Parse();
     }
 }

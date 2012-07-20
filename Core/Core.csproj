@@ -49,8 +49,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractParser.cs" />
-    <Compile Include="FileReader.cs" />
+    <Compile Include="Parsers\AbstractParser.cs" />
+    <Compile Include="Parsers\FileReader.cs" />
     <Compile Include="Parsers\IResourceItemParser.cs" />
     <Compile Include="Parsers\JsonResourceItemParser.cs" />
     <Compile Include="StringFunctions.cs" />

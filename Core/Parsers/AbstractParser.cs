@@ -2,7 +2,7 @@ using System;
 
 namespace Core
 {
-    public abstract class AbstractParser : IParser
+    public abstract class AbstractParser<T> : IParser where T:Exception
     {
         public virtual VerificationResult Parse()
         {
@@ -10,14 +10,19 @@ namespace Core
             {
                 return Execute();
             }
-            catch(Exception e)
+            catch(T e)
             {
                 return new VerificationResult { Message = ConstructExceptionMessage(e), Type = ResultType.Failure };
             }
         }
 
-        public abstract VerificationResult Execute();
+        protected abstract VerificationResult Execute();
 
-        public abstract string ConstructExceptionMessage(Exception e);
+        protected abstract string ConstructExceptionMessage(T e);
+    }
+
+    public interface IParser
+    {
+        VerificationResult Parse();
     }
 }

@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Core.SpecFlow
+namespace Core.SpecFlow.Parsers
 {
     using TechTalk.SpecFlow;
     

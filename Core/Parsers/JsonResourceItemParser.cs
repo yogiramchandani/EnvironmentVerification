@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Core
 {
-    public class JsonResourceItemParser : AbstractParser, IResourceItemParser<string, string>
+    public class JsonResourceItemParser : AbstractParser<JsonException>, IResourceItemParser<string, string>
     {
         public List<IResourceItem<string>> ResourceList { get; set; }
         private string _content;
@@ -21,7 +21,7 @@ namespace Core
             return Parse();
         }
 
-        public override VerificationResult Execute()
+        protected override VerificationResult Execute()
         {
             _content = Regex.Replace(_content,
                 @"(?<!\\)  # lookbehind: Check that previous character isn't a \
@@ -35,7 +35,7 @@ namespace Core
             return new VerificationResult{Type = ResultType.Success};
         }
 
-        public override string ConstructExceptionMessage(Exception e)
+        protected override string ConstructExceptionMessage(JsonException e)
         {
             return string.Format("{0}: Error in class (JsonResourceItemParser) while parsing Json content, the exception thrown : {1}", ResultType.Failure, e.Message);
         }
