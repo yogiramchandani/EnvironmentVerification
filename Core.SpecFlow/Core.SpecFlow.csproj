@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonFileParserSteps.cs" />
     <Compile Include="JsonResourceItemProcessor.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -34,12 +34,4 @@ namespace Core
         protected abstract ResultType Verify(Tuple<string, string> tuple);
         protected abstract string ConstructMessage(Tuple<string, string> tuple, ResultType canConnect);
     }
-
-    public enum ResultType
-    {
-        Success,
-        Failure,
-        Warning,
-        Info
-    }
 }

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    public interface IResourceItemProcessor<TResourceType, TFormat>
+    public interface IResourceItemParser<TResourceType, TFormat>
     {
-        void ParseResourceItems(TFormat json);
+        void ParseResourceItems(TFormat raw);
         List<IResourceItem<TResourceType>> GetResourceList();
     }
 }

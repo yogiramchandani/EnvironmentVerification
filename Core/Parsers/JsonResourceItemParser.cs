@@ -3,18 +3,18 @@ using Newtonsoft.Json;
 
 namespace Core
 {
-    public class JsonResourceItemProcessor : IResourceItemProcessor<string, string>
+    public class JsonResourceItemParser : IResourceItemParser<string, string>
     {
         private List<IResourceItem<string>> _resourceList;
 
-        public JsonResourceItemProcessor()
+        public JsonResourceItemParser()
         {
             _resourceList = new List<IResourceItem<string>>();
         }
 
-        public void ParseResourceItems(string json)
+        public void ParseResourceItems(string raw)
         {
-            var list = JsonConvert.DeserializeObject<List<ResourceItem>>(json);
+            var list = JsonConvert.DeserializeObject<List<ResourceItem>>(raw);
             _resourceList.AddRange(list);
         }
 

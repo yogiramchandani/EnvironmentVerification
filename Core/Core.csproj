@@ -49,20 +49,21 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IResourceItemProcessor.cs" />
-    <Compile Include="JsonResourceItemProcessor.cs" />
+    <Compile Include="Parsers\IResourceItemParser.cs" />
+    <Compile Include="Parsers\JsonResourceItemParser.cs" />
     <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />
     <Compile Include="Verifiers\FileVerifier.cs" />
-    <Compile Include="IResourceVerifier.cs" />
+    <Compile Include="Verifiers\IResourceVerifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourceItem.cs" />
+    <Compile Include="Model\ResourceItem.cs" />
     <Compile Include="Verifiers\AbstractResourceVerifier.cs" />
+    <Compile Include="Model\ResultType.cs" />
     <Compile Include="Verifiers\ServiceVerifier.cs" />
     <Compile Include="StringTypeResourceVerifierFactory.cs" />
     <Compile Include="Verifiers\UnknownVerifier.cs" />
-    <Compile Include="VerificationResult.cs" />
+    <Compile Include="Model\VerificationResult.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
