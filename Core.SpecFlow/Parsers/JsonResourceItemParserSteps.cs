@@ -7,31 +7,33 @@ namespace Core.SpecFlow
     [Binding]
     public class JsonResourceItemParserSteps
     {
-        JsonResourceItemParser _parser;
-
         [Given("I have a new JsonResourceItemProcessor")]
         public void GivenIHaveANewJsonResourceItemProcessor()
         {
-            _parser = new JsonResourceItemParser();
+            var parser = new JsonResourceItemParser();
+            ScenarioContext.Current.Set(parser);
         }
 
         [When("I add Json objects for processing (.*)")]
         public void WhenIAddJsonItemsForProcessing(string json)
         {
-            _parser.ParseResourceItems(json);
+            var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
+            parser.ParseResourceItems(json);
         }
 
         [Then("the Json result should have a count of (.*)")]
         public void ThenTheJsonParseResultCountShouldBe(int expected)
         {
-            var actual = _parser.GetResourceList();
+            var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
+            var actual = parser.GetResourceList();
             Assert.AreEqual(actual.Count, expected);
         }
 
         [Then("the Json result for type (.*) should have a count of (.*)")]
         public void ThenTheJsonParseResultTypeCountShouldBe(string type, int count)
         {
-            var actual = _parser.GetResourceList();
+            var parser = ScenarioContext.Current.Get<JsonResourceItemParser>();
+            var actual = parser.GetResourceList();
             Assert.AreEqual(actual.Count(x => x.ItemType == type), count);
         }
     }

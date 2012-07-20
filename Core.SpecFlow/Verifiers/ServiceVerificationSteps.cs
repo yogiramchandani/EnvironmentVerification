@@ -5,38 +5,36 @@ using TechTalk.SpecFlow;
 namespace Core.SpecFlow
 {
     [Binding]
-    public class ServiceVerificationSteps
+    public class ServiceVerificationSteps : AbstractSteps<ServiceVerifier>
     {
-        private ServiceVerifier _verifier;
-
         [Given("I have a new ServiceVerifier")]
         public void GivenAServiceVerifier()
         {
-            _verifier = new ServiceVerifier();
+            Context = new ServiceVerifier();
         }
 
         [When("I add a service connection name: (.*), connection: (.*)")]
         public void WhenIAddAServiceConnection(string name, string connection)
         {
-            _verifier.AddConnectionToVerify(name, connection);
+            Context.AddConnectionToVerify(name, connection);
         }
 
         [Then("the result message should be (.*)")]
         public void ThenTheResultMessageShouldBe(string result)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().First().Message, result);
+            Assert.AreEqual(Context.GetVerificationStatus().First().Message, result);
         }
 
         [Then("the result status should be (.*)")]
         public void ThenTheResultStatusShouldBe(ResultType resultType)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().First().Type, resultType);
+            Assert.AreEqual(Context.GetVerificationStatus().First().Type, resultType);
         }
 
         [Then("the result count should be (.*)")]
         public void ThenTheResultCountShouldBe(int result)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().Count, result);
+            Assert.AreEqual(Context.GetVerificationStatus().Count, result);
         }
     }
 }

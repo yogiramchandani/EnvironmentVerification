@@ -5,38 +5,36 @@ using TechTalk.SpecFlow;
 namespace Core.SpecFlow
 {
     [Binding]
-    public class DatabaseVerificationSteps
+    public class DatabaseVerificationSteps : AbstractSteps<DatabaseVerifier>
     {
-        private DatabaseVerifier _verifier;
-
         [Given("I have a new DatabaseVerifier")]
         public void GivenADatabaseVerifier()
         {
-            _verifier = new DatabaseVerifier();
+            Context = new DatabaseVerifier();
         }
 
         [When("I add the DataBase connection name: (.*), connection: (.*)")]
         public void WhenIAddADatabaseConnection(string name, string connection)
         {
-            _verifier.AddConnectionToVerify(name, connection);
+            Context.AddConnectionToVerify(name, connection);
         }
         
         [Then("the first result message on the screen should be (.*)")]
         public void ThenTheFirstResultMessageShouldBe(string result)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().First().Message, result);
+            Assert.AreEqual(Context.GetVerificationStatus().First().Message, result);
         }
 
         [Then("the first result verification on the screen should be (.*)")]
         public void ThenTheFirstResultCanConnectShouldBe(ResultType resultType)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().First().Type, resultType);
+            Assert.AreEqual(Context.GetVerificationStatus().First().Type, resultType);
         }
 
         [Then("the count of messages should be (.*)")]
         public void ThenTheCountOfMessagesShouldBe(int result)
         {
-            Assert.AreEqual(_verifier.GetVerificationStatus().Count(), result);
+            Assert.AreEqual(Context.GetVerificationStatus().Count(), result);
         }
     }
 }

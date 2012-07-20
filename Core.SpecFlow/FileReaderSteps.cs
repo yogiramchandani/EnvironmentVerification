@@ -4,20 +4,18 @@ using TechTalk.SpecFlow;
 namespace Core.SpecFlow
 {
     [Binding]
-    public class FileReaderSteps
+    public class FileReaderSteps : AbstractSteps<FileReader>
     {
         [When(@"I create a new file reader with path ""(.*)""")]
         public void WhenICreateANewFileReaderWithPath(string file)
         {
-            var fileReader = new FileReader(file);
-            ScenarioContext.Current.Set(fileReader);
+            Context = new FileReader(file);
         }
 
         [When(@"I call validate file")]
         public void WhenICallValidateFile()
         {
-            var fileReader = ScenarioContext.Current.Get<FileReader>();
-            ValidationResult result = fileReader.Validate();
+            ValidationResult result = Context.Validate();
             ScenarioContext.Current.Set(result);
         }
 

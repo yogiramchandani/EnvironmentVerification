@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\RamchandaniY\Git\EnvironmentVerification\Core.SpecFlow\bin\Debug\Core.SpecFlow.dll" total="38" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-07-20" time="12:16:25">
+<test-results name="D:\RamchandaniY\Git\EnvironmentVerification\Core.SpecFlow\bin\Debug\Core.SpecFlow.dll" total="38" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-07-20" time="12:55:56">
   <environment nunit-version="2.6.0.12051" clr-version="2.0.50727.5456" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\RamchandaniY\Git\EnvironmentVerification\packages\NUnit.Runners.2.6.0.12051\tools" machine-name="PPF-DELL-200" user="RamchandaniY" user-domain="PPF-IT" />
   <culture-info current-culture="en-GB" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="D:\RamchandaniY\Git\EnvironmentVerification\Core.SpecFlow\bin\Debug\Core.SpecFlow.dll" executed="True" result="Success" success="True" time="1.821" asserts="0">
+  <test-suite type="Assembly" name="D:\RamchandaniY\Git\EnvironmentVerification\Core.SpecFlow\bin\Debug\Core.SpecFlow.dll" executed="True" result="Success" success="True" time="1.807" asserts="0">
     <results>
-      <test-suite type="Namespace" name="Core" executed="True" result="Success" success="True" time="1.805" asserts="0">
+      <test-suite type="Namespace" name="Core" executed="True" result="Success" success="True" time="1.791" asserts="0">
         <results>
-          <test-suite type="Namespace" name="SpecFlow" executed="True" result="Success" success="True" time="1.805" asserts="0">
+          <test-suite type="Namespace" name="SpecFlow" executed="True" result="Success" success="True" time="1.791" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Parsers" executed="True" result="Success" success="True" time="1.152" asserts="0">
+              <test-suite type="Namespace" name="Parsers" executed="True" result="Success" success="True" time="1.139" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="JsonResourceItemParserFeature" description="Json Resource Item Parser" executed="True" result="Success" success="True" time="1.149" asserts="0">
+                  <test-suite type="TestFixture" name="JsonResourceItemParserFeature" description="Json Resource Item Parser" executed="True" result="Success" success="True" time="1.137" asserts="0">
                     <results>
-                      <test-case name="Core.SpecFlow.Parsers.JsonResourceItemParserFeature.WhenAValidJsonStringIsPassedWith1FileAnd2DirectoryCheckCount" description="When a valid Json string is passed with 1 File and 2 Directory, check count" executed="True" result="Success" success="True" time="0.548" asserts="3" />
+                      <test-case name="Core.SpecFlow.Parsers.JsonResourceItemParserFeature.WhenAValidJsonStringIsPassedWith1FileAnd2DirectoryCheckCount" description="When a valid Json string is passed with 1 File and 2 Directory, check count" executed="True" result="Success" success="True" time="0.545" asserts="3" />
                       <test-case name="Core.SpecFlow.Parsers.JsonResourceItemParserFeature.WhenAValidJsonStringIsPassedWith3ItemsCheckCount" description="When a valid Json string is passed with 3 items, check count" executed="True" result="Success" success="True" time="0.002" asserts="2" />
                     </results>
                   </test-suite>
                 </results>
               </test-suite>
-              <test-suite type="TestFixture" name="ReadingFromFileFeature" description="Reading from File" executed="True" result="Success" success="True" time="0.023" asserts="0">
+              <test-suite type="TestFixture" name="ReadingFromFileFeature" description="Reading from File" executed="True" result="Success" success="True" time="0.020" asserts="0">
                 <results>
-                  <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetFailureValidationTypeForReadingAnInvalidFile" description="Get Failure validation type for reading an invalid file" executed="True" result="Success" success="True" time="0.009" asserts="1" />
+                  <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetFailureValidationTypeForReadingAnInvalidFile" description="Get Failure validation type for reading an invalid file" executed="True" result="Success" success="True" time="0.006" asserts="1" />
                   <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetSuccessValidationTypeForReadingAValidFile" description="Get Success validation type for reading a valid file" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                   <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetValidationMessageForReadingAnInvalidFile" description="Get validation message for reading an invalid file" executed="True" result="Success" success="True" time="0.003" asserts="1" />
-                  <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetValidationMessageForReadingAValidFile" description="Get validation message for reading a valid file" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="Core.SpecFlow.ReadingFromFileFeature.GetValidationMessageForReadingAValidFile" description="Get validation message for reading a valid file" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                 </results>
               </test-suite>
-              <test-suite type="TestFixture" name="VerificationProcessorFeature" description="Verification Processor" executed="True" result="Success" success="True" time="0.406" asserts="0">
+              <test-suite type="TestFixture" name="VerificationProcessorFeature" description="Verification Processor" executed="True" result="Success" success="True" time="0.408" asserts="0">
                 <results>
-                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When2ValidAnd1InvalidItemsArePassedCheckReturnValue" description="When 2 Valid and 1 invalid items are passed, check return value" executed="True" result="Success" success="True" time="0.054" asserts="2" />
-                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When2ValidDuplicatesArePassedForAllTypesCheckReturnValue" description="When 2 Valid Duplicates are passed for all types, check return value" executed="True" result="Success" success="True" time="0.337" asserts="2" />
-                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When3ItemsArePassedCheckForCount" description="When 3 items are passed, check for count" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When2ValidAnd1InvalidItemsArePassedCheckReturnValue" description="When 2 Valid and 1 invalid items are passed, check return value" executed="True" result="Success" success="True" time="0.053" asserts="2" />
+                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When2ValidDuplicatesArePassedForAllTypesCheckReturnValue" description="When 2 Valid Duplicates are passed for all types, check return value" executed="True" result="Success" success="True" time="0.340" asserts="2" />
+                  <test-case name="Core.SpecFlow.VerificationProcessorFeature.When3ItemsArePassedCheckForCount" description="When 3 items are passed, check for count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                   <test-case name="Core.SpecFlow.VerificationProcessorFeature.When4ValidDuplicatesArePassedCheckReturnValue" description="When 4 Valid Duplicates are passed, check return value" executed="True" result="Success" success="True" time="0.003" asserts="2" />
                 </results>
               </test-suite>
-              <test-suite type="Namespace" name="Verifiers" executed="True" result="Success" success="True" time="0.211" asserts="0">
+              <test-suite type="Namespace" name="Verifiers" executed="True" result="Success" success="True" time="0.213" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="DatabaseVerficationFeature" description="Database Verfication" executed="True" result="Success" success="True" time="0.053" asserts="0">
+                  <test-suite type="TestFixture" name="DatabaseVerficationFeature" description="Database Verfication" executed="True" result="Success" success="True" time="0.064" asserts="0">
                     <results>
-                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature._3DatabaseConnectionsAddedCheckTheResultCount" description="3 Database connections added check the result count" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature._3DatabaseConnectionsAddedCheckTheResultCount" description="3 Database connections added check the result count" executed="True" result="Success" success="True" time="0.020" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForAnExistingDatabaseCheckIfResultType" description="For an existing database check if result type" executed="True" result="Success" success="True" time="0.003" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForAnExistingDatabaseCheckTheResultCount" description="For an existing database check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForAnExistingDatabaseCheckTheResultString" description="For an existing database check the result string" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForAnExistingDatabaseCheckTheResultCount" description="For an existing database check the result count" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForAnExistingDatabaseCheckTheResultString" description="For an existing database check the result string" executed="True" result="Success" success="True" time="0.003" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForANonExistentDatabaseCheckIfResultType" description="For a non existent database check if result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForANonExistentDatabaseCheckTheResultCount" description="For a non existent database check the result count" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForANonExistentDatabaseCheckTheResultCount" description="For a non existent database check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DatabaseVerficationFeature.ForANonExistentDatabaseCheckTheResultString" description="For a non existent database check the result string" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                     </results>
                   </test-suite>
-                  <test-suite type="TestFixture" name="DirectoryVerficationFeature" description="Directory Verfication" executed="True" result="Success" success="True" time="0.046" asserts="0">
+                  <test-suite type="TestFixture" name="DirectoryVerficationFeature" description="Directory Verfication" executed="True" result="Success" success="True" time="0.048" asserts="0">
                     <results>
-                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature._3DirectoryAreAddedCheckTheResultCount" description="3 directory are added, check the result count" executed="True" result="Success" success="True" time="0.003" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForAnExistingDirectoryCheckTheResultCount" description="For an existing directory, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature._3DirectoryAreAddedCheckTheResultCount" description="3 directory are added, check the result count" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForAnExistingDirectoryCheckTheResultCount" description="For an existing directory, check the result count" executed="True" result="Success" success="True" time="0.005" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForAnExistingDirectoryCheckTheResultMessage" description="For an existing directory, check the result message" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForAnExistingDirectoryCheckTheResultType" description="For an existing directory, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForANonExistentDirectoryCheckTheResultCount" description="For a non existent directory, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForANonExistentDirectoryCheckTheResultMessage" description="For a non existent directory, check the result message" executed="True" result="Success" success="True" time="0.001" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForANonExistentDirectoryCheckTheResultType" description="For a non existent directory, check the result type" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForANonExistentDirectoryCheckTheResultMessage" description="For a non existent directory, check the result message" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.DirectoryVerficationFeature.ForANonExistentDirectoryCheckTheResultType" description="For a non existent directory, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                     </results>
                   </test-suite>
                   <test-suite type="TestFixture" name="FileVerficationFeature" description="File Verfication" executed="True" result="Success" success="True" time="0.044" asserts="0">
@@ -64,19 +64,19 @@
                       <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature._3FileAreAddedCheckTheResultCount" description="3 File are added, check the result count" executed="True" result="Success" success="True" time="0.004" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForAnExistingFileCheckTheResultCount" description="For an existing File, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForAnExistingFileCheckTheResultMessage" description="For an existing File, check the result message" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForAnExistingFileCheckTheResultType" description="For an existing File, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForANonExistentFileCheckTheResultCount" description="For a non existent File, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForANonExistentFileCheckTheResultMessage" description="For a non existent File, check the result message" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForAnExistingFileCheckTheResultType" description="For an existing File, check the result type" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForANonExistentFileCheckTheResultCount" description="For a non existent File, check the result count" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForANonExistentFileCheckTheResultMessage" description="For a non existent File, check the result message" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.FileVerficationFeature.ForANonExistentFileCheckTheResultType" description="For a non existent File, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                     </results>
                   </test-suite>
-                  <test-suite type="TestFixture" name="ServiceVerficationFeature" description="Service Verfication" executed="True" result="Success" success="True" time="0.048" asserts="0">
+                  <test-suite type="TestFixture" name="ServiceVerficationFeature" description="Service Verfication" executed="True" result="Success" success="True" time="0.041" asserts="0">
                     <results>
                       <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature._3ServicesAreAddedCheckTheResultCount" description="3 services are added, check the result count" executed="True" result="Success" success="True" time="0.004" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultCount" description="For an existing service, check the result count" executed="True" result="Success" success="True" time="0.003" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultMessage" description="For an existing service, check the result message" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultType" description="For an existing service, check the result type" executed="True" result="Success" success="True" time="0.003" asserts="1" />
-                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForANonExistentServiceCheckTheResultCount" description="For a non existent service, check the result count" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultCount" description="For an existing service, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultMessage" description="For an existing service, check the result message" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForAnExistingServiceCheckTheResultType" description="For an existing service, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForANonExistentServiceCheckTheResultCount" description="For a non existent service, check the result count" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForANonExistentServiceCheckTheResultMessage" description="For a non existent service, check the result message" executed="True" result="Success" success="True" time="0.003" asserts="1" />
                       <test-case name="Core.SpecFlow.Verifiers.ServiceVerficationFeature.ForANonExistentServiceCheckTheResultType" description="For a non existent service, check the result type" executed="True" result="Success" success="True" time="0.002" asserts="1" />
                     </results>
