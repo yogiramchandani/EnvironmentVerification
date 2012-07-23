@@ -54,6 +54,7 @@
     <Compile Include="Parsers\IResourceItemParser.cs" />
     <Compile Include="Parsers\JsonResourceItemParser.cs" />
     <Compile Include="StringFunctions.cs" />
+    <Compile Include="VerificationInvoker.cs" />
     <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />

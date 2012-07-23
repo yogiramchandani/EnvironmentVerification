@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Core;
 
@@ -9,27 +8,14 @@ namespace ConsoleClient
     {
         static void Main(string[] args)
         {
-            var fileReader = new FileParser(args.First());
-            var result = new List<VerificationResult>();
-            var parser = new JsonResourceItemParser();
-
+            IParser fileReader = new FileParser(args.First());
             VerificationResult validationResult = fileReader.Parse();
 
-            if (validationResult.Type == ResultType.Success)
-            {   
-                validationResult = parser.ParseResourceItems(validationResult.Message);
-            }
-            if (validationResult.Type == ResultType.Success)
-            {
-                List<IResourceItem<string>> resourceList = parser.ResourceList;
-                var processor = new VerificationProcessor<string>(new StringTypeResourceVerifierFactory());
-                processor.AddResourceItems(resourceList);
-                result = processor.ProcessResources();
-            }
-            if (validationResult.Type != ResultType.Success)
-            {
-                result.Add(validationResult);
-            }
+            IResourceItemParser<string> parser = new JsonResourceItemParser();
+            IVerificationProcessor<string> processor = new VerificationProcessor<string>(new StringTypeResourceVerifierFactory());
+
+            IVerificationInvoker invoker = new VerificationInvoker<string>(parser, processor);
+            var result = invoker.VerifyEnvironment(validationResult);
 
             foreach (VerificationResult verificationResult in result)
             {
@@ -41,6 +27,8 @@ namespace ConsoleClient
             Console.WriteLine("Done ...");
             Console.ReadKey();
         }
+
+        
 
         private static ConsoleColor GetColour(ResultType actual)
         {

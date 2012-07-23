@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    public interface IResourceItemParser<TResourceType, TFormat>
+    public interface IResourceItemParser<TResourceType>
     {
-        VerificationResult ParseResourceItems(TFormat raw);
+        VerificationResult ParseResourceItems(string raw);
         List<IResourceItem<TResourceType>> ResourceList { get; set; }
     }
 }

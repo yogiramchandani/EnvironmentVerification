@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Core
 {
-    public class JsonResourceItemParser : AbstractParser<JsonException>, IResourceItemParser<string, string>
+    public class JsonResourceItemParser : AbstractParser<JsonException>, IResourceItemParser<string>
     {
         public List<IResourceItem<string>> ResourceList { get; set; }
         private string _content;

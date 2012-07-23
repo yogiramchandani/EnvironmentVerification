@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Core
 {
-    public class VerificationProcessor<T>
+    public class VerificationProcessor<T> : IVerificationProcessor<T>
     {
         private List<IResourceItem<T>> _resourceItems;
         private IResourceVerifierFactory<T> _factory;
@@ -38,5 +38,11 @@ namespace Core
 
             return result;
         }
+    }
+
+    public interface IVerificationProcessor<T>
+    {
+        void AddResourceItems(List<IResourceItem<T>> resourceItems);
+        List<VerificationResult> ProcessResources();
     }
 }
