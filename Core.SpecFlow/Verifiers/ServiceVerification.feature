@@ -6,7 +6,7 @@
 Scenario: For an existing service, check the result message
 	Given I have a new ServiceVerifier
 	When I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost
-	Then the result message should be Success connecting to Levy WCF Service, connection string : PPF.Levy.WCFHost
+	Then the result message should be Success connecting to Levy WCF Service, Key: ServiceName, Value: PPF.Levy.WCFHost
 
 Scenario: For an existing service, check the result type
 	Given I have a new ServiceVerifier
@@ -21,7 +21,7 @@ Scenario: For an existing service, check the result count
 Scenario: For a non existent service, check the result message
 	Given I have a new ServiceVerifier
 	When I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid
-	Then the result message should be Failure connecting to Invalid Service, connection string : PPF.Levy.Invalid
+	Then the result message should be Failure connecting to Invalid Service, Error Message: Service not found, Key: ServiceName, Value: PPF.Levy.Invalid
 
 Scenario: For a non existent service, check the result type
 	Given I have a new ServiceVerifier

@@ -78,9 +78,9 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add the DataBase connection name: Nirvana, connection: Data Source=.\\CDR;Initia" +
                     "l Catalog=nirvana_small;Integrated Security=SSPI");
 #line 9
- testRunner.Then("the first result message on the screen should be Success connecting to Nirvana, c" +
-                    "onnection string : Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Se" +
-                    "curity=SSPI");
+ testRunner.Then("the first result message on the screen should be Success connecting to Nirvana, K" +
+                    "ey: ConnectionString, Value: Data Source=.\\CDR;Initial Catalog=nirvana_small;Int" +
+                    "egrated Security=SSPI");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -135,8 +135,8 @@ this.ScenarioSetup(scenarioInfo);
                     "DR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line 24
  testRunner.Then("the first result message on the screen should be Failure connecting to NirvanaNot" +
-                    "Exists, connection string : Data Source=.\\CDR;Initial Catalog=nirvana_notExists;" +
-                    "Integrated Security=SSPI");
+                    "Exists, Error Message: , Key: ConnectionString, Value: Data Source=.\\CDR;Initial" +
+                    " Catalog=nirvana_notExists;Integrated Security=SSPI");
 #line hidden
             this.ScenarioCleanup();
         }

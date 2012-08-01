@@ -2,18 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace Core
 {
     public class DatabaseVerifier : AbstractResourceVerifier
     {
-        protected override ResultType Verify(Tuple<string, string> tuple)
+        private string ConnectionString = "ConnectionString";
+
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
         {
             ResultType resultType = ResultType.Failure;
             SqlConnection connection = null;
             try
             {
-                connection = new SqlConnection(tuple.Item2);
+                string connectionString = string.Empty;
+                if (!tuple.Item2.TryGetValue(ConnectionString, out connectionString))
+                {
+                    return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ConnectionString) };
+                }
+
+                connection = new SqlConnection(connectionString);
                 using (connection)
                 {
                     connection.Open();
@@ -28,13 +37,7 @@ namespace Core
             {
                 if (connection != null) connection.Close();
             }
-            return resultType;
-        }
-
-        protected override string ConstructMessage(Tuple<string, string> tuple, ResultType resultType)
-        {
-
-            return string.Format("{0} connecting to {1}, connection string : {2}", resultType.ToString(), tuple.Item1, tuple.Item2);
+            return new VerificationResult { Type = resultType };
         }
     }
 }

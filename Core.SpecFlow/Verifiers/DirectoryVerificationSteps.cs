@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -17,25 +18,27 @@ namespace Core.SpecFlow
         [When("I add a directory path, identifier: (.*), path: (.*)")]
         public void WhenIAddADirectoryConnection(string name, string connection)
         {
-            Context.AddConnectionToVerify(name, connection);
+            var actions = new Dictionary<string, string>();
+            actions.Add("DirectoryPath", connection);
+            Context.AddConnectionToVerify(name, actions);
         }
 
         [Then("the directory verification result message should be (.*)")]
         public void ThenTheResultMessageShouldBe(string result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().First().Message, result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().First().Message.RemoveEscapeChars());
         }
 
         [Then("the directory verification status should be (.*)")]
         public void ThenTheResultStatusShouldBe(ResultType resultType)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().First().Type, resultType);
+            Assert.AreEqual(resultType, Context.GetVerificationStatus().First().Type);
         }
 
         [Then("the directory verification count should be (.*)")]
         public void ThenTheDirectoryVerificationResultCountShouldBe(int result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().Count, result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().Count);
         }
     }
 }

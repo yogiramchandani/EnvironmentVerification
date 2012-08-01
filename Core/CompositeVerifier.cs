@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    public class VerificationInvoker<TResourceType> : IVerificationInvoker
+    public class CompositeVerifier<TResourceType> : IVerificationInvoker
     {
         readonly IResourceItemParser<TResourceType> _parser;
         readonly IVerificationProcessor<TResourceType> _processor;
 
-        public VerificationInvoker( IResourceItemParser<TResourceType> parser, 
+        public CompositeVerifier( IResourceItemParser<TResourceType> parser, 
                                     IVerificationProcessor<TResourceType> processor)
         {
             _parser = parser;

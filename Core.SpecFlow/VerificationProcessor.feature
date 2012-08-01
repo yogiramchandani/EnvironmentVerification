@@ -6,19 +6,19 @@
 Scenario: When 3 items are passed, check for count
 	Given I have a new EnvironmentVerificationProcessor
 	When I add items for processing
-	| type      | name              | location                                           |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
-	| Directory | TemplateDirectory | D:\AppShare\DataSuite\Templates                    |
-	| Invalid   | InvalidName       |		Test										 |
+	| type      | name              | key           | value                                              |
+	| File      | Template          | FilePath      | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| Directory | TemplateDirectory | DirectoryPath | D:\AppShare\DataSuite\Templates                    |
+	| Invalid   | InvalidName       | Invalid       | Test                                               |
 	Then the Environment Verification Processor result count should be 3
 
 Scenario: When 2 Valid and 1 invalid items are passed, check return value
 	Given I have a new EnvironmentVerificationProcessor
 	When I add items for processing
-	| type      | name              | location                                           |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
-	| Directory | TemplateDirectory | D:\AppShare\DataSuite\Templates                    |
-	| Invalid   | InvalidName       |		Test										 |
+	| type      | name              | key           | value                                              |
+	| File      | Template          | FilePath      | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| Directory | TemplateDirectory | DirectoryPath | D:\AppShare\DataSuite\Templates                    |
+	| Invalid   | InvalidName       | Invalid       | Test                                               |
 	Then the Environment Verification Processor result should be
 	| Type    | Message                                                                                       |
 	| Success | Passed connecting to Templates, file path: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
@@ -28,11 +28,11 @@ Scenario: When 2 Valid and 1 invalid items are passed, check return value
 Scenario: When 4 Valid Duplicates are passed, check return value
 	Given I have a new EnvironmentVerificationProcessor
 	When I add items for processing
-	| type      | name              | location                                           |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
-	| File      | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| type | name     | key      | value                                              |
+	| File | Template | FilePath | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| File | Template | FilePath | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| File | Template | FilePath | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
+	| File | Template | FilePath | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
 	Then the Environment Verification Processor result should be
 	| Type    | Message                                                                                       |
 	| Success | Passed connecting to Templates, file path: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt |
@@ -43,17 +43,17 @@ Scenario: When 4 Valid Duplicates are passed, check return value
 Scenario: When 2 Valid Duplicates are passed for all types, check return value
 	Given I have a new EnvironmentVerificationProcessor
 	When I add items for processing
-	| type           | name              | location                                                                 |
-	| File           | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt                       |
-	| File           | Template          | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt                       |
-	| Directory      | TemplateDirectory | D:\AppShare\DataSuite\Templates                                          |
-	| Directory      | TemplateDirectory | D:\AppShare\DataSuite\Templates                                          |
-	| Database       | Nirvana           | Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI |
-	| Database       | Marshal           | Data Source=.\CDR;Initial Catalog=marshal;Integrated Security=SSPI       |
-	| WindowsService | WinService1       | PPF.Levy.WCFHost                                                         |
-	| WindowsService | WinService2       | PPF.Levy.WCFHost                                                         |
-	| Invalid        | Invalid1          | InvalidLocation1                                                         |
-	| Invalid        | Invalid2          | InvalidLocation2                                                         |
+	| type           | name              | key              | value                                                                    |
+	| File           | Template          | FilePath         | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt                       |
+	| File           | Template          | FilePath         | D:\AppShare\DataSuite\Templates\UtilFunctions.xslt                       |
+	| Directory      | TemplateDirectory | DirectoryPath    | D:\AppShare\DataSuite\Templates                                          |
+	| Directory      | TemplateDirectory | DirectoryPath    | D:\AppShare\DataSuite\Templates                                          |
+	| Database       | Nirvana           | ConnectionString | Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI |
+	| Database       | Marshal           | ConnectionString | Data Source=.\CDR;Initial Catalog=marshal;Integrated Security=SSPI       |
+	| WindowsService | WinService1       | ServiceName      | PPF.Levy.WCFHost                                                         |
+	| WindowsService | WinService2       | ServiceName      | PPF.Levy.WCFHost                                                         |
+	| Invalid        | Invalid1          | Invalid          | InvalidLocation1                                                         |
+	| Invalid        | Invalid2          | Invalid          | InvalidLocation2                                                         |
 	Then the Environment Verification Processor result should be
 	| Type    | Message                                                                                                                    |
 	| Success | Passed connecting to Templates, file path: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt                              |

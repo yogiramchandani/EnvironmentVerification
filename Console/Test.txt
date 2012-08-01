@@ -1,0 +1,30 @@
+[
+	{
+		"ItemType" : "File",
+		"Identifier" : "Templates",
+		"Actions" : {
+							"FilePath" : "D:\AppShare\DataSuite\Templates\UtilFunctions.xslt"
+					}
+	}, 
+	{
+		"ItemType" : "Directory",
+		"Identifier" : "TemplateDirectory",
+		"Actions" : {
+							"DirectoryPath" : "D:\AppShare\DataSuite\Templates"
+					}
+	}, 
+	{
+		"ItemType" : "WindowsService",
+		"Identifier" : "DHCP",
+		"Actions" : {
+							"ServiceName" : "Dhcp"
+					}
+	}, 
+	{
+		"ItemType" : "Test",
+		"Identifier" : "TestInvalid",
+		"Actions" : {
+							"ServicePath" : "PPF.Levy.WCFHost"
+					}
+	}
+]

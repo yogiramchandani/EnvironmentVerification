@@ -1,16 +1,18 @@
+using System.Collections.Generic;
+
 namespace Core
 {
     public class ResourceItem : IResourceItem<string>
     {
         public string ItemType { get; set; }
         public string Identifier { get; set; }
-        public string Location { get; set; }
+        public IDictionary<string, string> Actions { get; set; }
     }
 
     public interface IResourceItem<T>
     {
         T ItemType { get; set; }
         string Identifier { get; set; }
-        string Location { get; set; }
+        IDictionary<string, string> Actions { get; set; }
     }
 }

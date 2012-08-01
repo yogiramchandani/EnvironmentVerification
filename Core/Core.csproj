@@ -36,6 +36,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging">
+      <HintPath>..\packages\Ninject.Extensions.Logging.3.0.1.0\lib\net40\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -54,7 +60,7 @@
     <Compile Include="Parsers\IResourceItemParser.cs" />
     <Compile Include="Parsers\JsonResourceItemParser.cs" />
     <Compile Include="StringFunctions.cs" />
-    <Compile Include="VerificationInvoker.cs" />
+    <Compile Include="CompositeVerifier.cs" />
     <Compile Include="VerificationProcessor.cs" />
     <Compile Include="Verifiers\DatabaseVerifier.cs" />
     <Compile Include="Verifiers\DirectoryVerifier.cs" />

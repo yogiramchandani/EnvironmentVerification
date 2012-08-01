@@ -8,21 +8,25 @@ namespace Core
     public class ServiceVerifier : AbstractResourceVerifier
     {
         ServiceController[] services;
+        private string ServicePath = "ServiceName";
 
         public ServiceVerifier() : base()
         {
             services = ServiceController.GetServices();
         }
 
-        protected override ResultType Verify(Tuple<string, string> tuple)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
         {
-            ServiceController service = services.FirstOrDefault(x => x.ServiceName == tuple.Item2);
-            return service != null && service.Status == ServiceControllerStatus.Running ? ResultType.Success : ResultType.Failure;
-        }
+            string serviceName;
+            if (!tuple.Item2.TryGetValue(ServicePath, out serviceName))
+            {
+                return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ServicePath) };
+            }
 
-        protected override string ConstructMessage(Tuple<string, string> tuple, ResultType resultType)
-        {
-            return string.Format("{0} connecting to {1}, connection string : {2}", resultType.ToString(), tuple.Item1, tuple.Item2);
+            ServiceController service = services.FirstOrDefault(x => x.ServiceName == serviceName);
+            return service != null && service.Status == ServiceControllerStatus.Running 
+                ? new VerificationResult { Type = ResultType.Success }
+                : new VerificationResult { Type = ResultType.Failure, Message = "Service not found" };
         }
     }
 }

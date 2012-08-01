@@ -78,18 +78,22 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "name",
-                        "location"});
+                        "key",
+                        "value"});
             table1.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table1.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
+                        "DirectoryPath",
                         "D:\\AppShare\\DataSuite\\Templates"});
             table1.AddRow(new string[] {
                         "Invalid",
                         "InvalidName",
+                        "Invalid",
                         "Test"});
 #line 8
  testRunner.When("I add items for processing", ((string)(null)), table1);
@@ -112,18 +116,22 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "name",
-                        "location"});
+                        "key",
+                        "value"});
             table2.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table2.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
+                        "DirectoryPath",
                         "D:\\AppShare\\DataSuite\\Templates"});
             table2.AddRow(new string[] {
                         "Invalid",
                         "InvalidName",
+                        "Invalid",
                         "Test"});
 #line 17
  testRunner.When("I add items for processing", ((string)(null)), table2);
@@ -160,22 +168,27 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "name",
-                        "location"});
+                        "key",
+                        "value"});
             table4.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table4.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table4.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table4.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
 #line 30
  testRunner.When("I add items for processing", ((string)(null)), table4);
@@ -218,46 +231,57 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "name",
-                        "location"});
+                        "key",
+                        "value"});
             table6.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table6.AddRow(new string[] {
                         "File",
                         "Template",
+                        "FilePath",
                         "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
             table6.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
+                        "DirectoryPath",
                         "D:\\AppShare\\DataSuite\\Templates"});
             table6.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
+                        "DirectoryPath",
                         "D:\\AppShare\\DataSuite\\Templates"});
             table6.AddRow(new string[] {
                         "Database",
                         "Nirvana",
+                        "ConnectionString",
                         "Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI"});
             table6.AddRow(new string[] {
                         "Database",
                         "Marshal",
+                        "ConnectionString",
                         "Data Source=.\\CDR;Initial Catalog=marshal;Integrated Security=SSPI"});
             table6.AddRow(new string[] {
                         "WindowsService",
                         "WinService1",
+                        "ServiceName",
                         "PPF.Levy.WCFHost"});
             table6.AddRow(new string[] {
                         "WindowsService",
                         "WinService2",
+                        "ServiceName",
                         "PPF.Levy.WCFHost"});
             table6.AddRow(new string[] {
                         "Invalid",
                         "Invalid1",
+                        "Invalid",
                         "InvalidLocation1"});
             table6.AddRow(new string[] {
                         "Invalid",
                         "Invalid2",
+                        "Invalid",
                         "InvalidLocation2"});
 #line 45
  testRunner.When("I add items for processing", ((string)(null)), table6);

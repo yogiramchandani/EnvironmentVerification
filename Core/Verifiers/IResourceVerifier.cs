@@ -4,7 +4,7 @@ namespace Core
 {
     public interface IResourceVerifier
     {
-        void AddConnectionToVerify(string key, string connection);
+        void AddConnectionToVerify(string key, IDictionary<string, string> actions);
         List<VerificationResult> GetVerificationStatus();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -17,26 +18,28 @@ namespace Core.SpecFlow
         [When("I add a File path, identifier: (.*), path: (.*)")]
         public void WhenIAddAFileConnection(string name, string connection)
         {
-            Context.AddConnectionToVerify(name, connection);
+            var actions = new Dictionary<string, string>();
+            actions.Add("FilePath", connection);
+            Context.AddConnectionToVerify(name, actions);
         }
 
         [Then("the File verification result message should be (.*)")]
         public void ThenTheResultMessageShouldBe(string result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().First().Message, result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().First().Message.RemoveEscapeChars());
         }
 
         [Then("the File verification status should be (.*)")]
         public void ThenTheResultStatusShouldBe(ResultType resultType)
         {
 
-            Assert.AreEqual(Context.GetVerificationStatus().First().Type, resultType);
+            Assert.AreEqual(resultType, Context.GetVerificationStatus().First().Type);
         }
 
         [Then("the File verification count should be (.*)")]
         public void ThenTheFileVerificationResultCountShouldBe(int result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().Count, result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().Count);
         }
     }
 }

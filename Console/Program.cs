@@ -1,21 +1,45 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using Core;
+using NLog;
+using Ninject;
+using Ninject.Extensions.Logging;
+using Ninject.Parameters;
 
 namespace ConsoleClient
 {
     class Program
     {
+        [Inject]
+        public ILogger logger { private get; set; }
+
         static void Main(string[] args)
         {
-            IParser fileReader = new FileParser(args.First());
-            VerificationResult validationResult = fileReader.Parse();
+            IKernel kernel = new StandardKernel();
+            kernel.Bind<ILogger>().ToMethod(
+                x =>
+                    {
+                        var scope = x.Request.ParentRequest.Service.FullName;
+                        var log = (ILogger) LogManager.GetLogger(scope, typeof (Log));
+                        return log;
+                    });
 
-            IResourceItemParser<string> parser = new JsonResourceItemParser();
-            IVerificationProcessor<string> processor = new VerificationProcessor<string>(new StringTypeResourceVerifierFactory());
-
-            IVerificationInvoker invoker = new VerificationInvoker<string>(parser, processor);
-            var result = invoker.VerifyEnvironment(validationResult);
+            kernel.Bind<IParser>().To<FileParser>();
+            kernel.Bind<IResourceItemParser<string>>().To<JsonResourceItemParser>();
+            kernel.Bind<IVerificationProcessor<string>>().To<VerificationProcessor<string>>()
+                .WithConstructorArgument("factory", new StringTypeResourceVerifierFactory());
+            kernel.Bind<IVerificationInvoker>().To<CompositeVerifier<string>>();
+            
+            IParser fileReader = kernel.Get<IParser>(new ConstructorArgument("filePath", args.First()));
+            VerificationResult jsonStringFromFile = fileReader.Parse();
+            IResourceItemParser<string> parser = kernel.Get<IResourceItemParser<string>>();
+            IVerificationProcessor<string> processor = kernel.Get<IVerificationProcessor<string>>();
+            IVerificationInvoker invoker = kernel.Get<IVerificationInvoker>(
+                                                new ConstructorArgument("parser", parser), 
+                                                new ConstructorArgument("processor", processor));
+            
+            var result = invoker.VerifyEnvironment(jsonStringFromFile);
 
             foreach (VerificationResult verificationResult in result)
             {
@@ -27,8 +51,6 @@ namespace ConsoleClient
             Console.WriteLine("Done ...");
             Console.ReadKey();
         }
-
-        
 
         private static ConsoleColor GetColour(ResultType actual)
         {

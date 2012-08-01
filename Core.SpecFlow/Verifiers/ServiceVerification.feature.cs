@@ -77,8 +77,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
 #line 9
- testRunner.Then("the result message should be Success connecting to Levy WCF Service, connection s" +
-                    "tring : PPF.Levy.WCFHost");
+ testRunner.Then("the result message should be Success connecting to Levy WCF Service, Key: Service" +
+                    "Name, Value: PPF.Levy.WCFHost");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -129,8 +129,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 24
- testRunner.Then("the result message should be Failure connecting to Invalid Service, connection st" +
-                    "ring : PPF.Levy.Invalid");
+ testRunner.Then("the result message should be Failure connecting to Invalid Service, Error Message" +
+                    ": Service not found, Key: ServiceName, Value: PPF.Levy.Invalid");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -1,18 +1,23 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Core
 {
     public class FileVerifier : AbstractResourceVerifier
     {
-        protected override ResultType Verify(Tuple<string, string> tuple)
-        {
-            return File.Exists(tuple.Item2) ? ResultType.Success : ResultType.Failure;
-        }
+        private string FilePath = "FilePath";
 
-        protected override string ConstructMessage(Tuple<string, string> tuple, ResultType resultType)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
         {
-            return string.Format("{0} connecting to {1}, file path: {2}", resultType.ToString(), tuple.Item1, tuple.Item2);
+            string filePath;
+            if (!tuple.Item2.TryGetValue(FilePath, out filePath))
+            {
+                return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", FilePath) };
+            }
+            return File.Exists(filePath)
+                       ? new VerificationResult { Type = ResultType.Success }
+                       : new VerificationResult { Type = ResultType.Failure, Message = "File not found" };
         }
     }
 }

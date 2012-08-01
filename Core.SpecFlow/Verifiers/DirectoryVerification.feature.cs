@@ -79,7 +79,7 @@ this.ScenarioSetup(scenarioInfo);
                     "tes");
 #line 9
  testRunner.Then("the directory verification result message should be Success connecting to Templat" +
-                    "es, path: D:\\AppShare\\DataSuite\\Templates");
+                    "es, Key: DirectoryPath, Value: D:\\AppShare\\DataSuite\\Templates");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -133,7 +133,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a directory path, identifier: Invalid, path: D:\\AppShare\\DataSuite\\Invalid");
 #line 24
  testRunner.Then("the directory verification result message should be Failure connecting to Invalid" +
-                    ", path: D:\\AppShare\\DataSuite\\Invalid");
+                    ", Error Message: Directory not found, Key: DirectoryPath, Value: D:\\AppShare\\Dat" +
+                    "aSuite\\Invalid");
 #line hidden
             this.ScenarioCleanup();
         }

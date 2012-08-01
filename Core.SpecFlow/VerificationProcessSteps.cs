@@ -28,7 +28,7 @@ namespace Core.SpecFlow
                                                         {
                                                             ItemType = row["type"],
                                                             Identifier = row["name"],
-                                                            Location = row["location"]
+                                                            Actions = new Dictionary<string, string> {{row["key"], row["value"]}}
                                                         }
                                                 });
             }

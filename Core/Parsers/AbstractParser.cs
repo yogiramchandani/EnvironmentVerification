@@ -1,9 +1,14 @@
 using System;
+using Ninject;
+using Ninject.Extensions.Logging;
 
 namespace Core
 {
     public abstract class AbstractParser<T> : IParser where T:Exception
     {
+        [Inject]
+        public ILogger logger { protected get; set; }
+
         public virtual VerificationResult Parse()
         {
             try

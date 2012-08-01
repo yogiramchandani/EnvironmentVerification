@@ -1,18 +1,23 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Core
 {
     public class DirectoryVerifier : AbstractResourceVerifier
     {
-        protected override ResultType Verify(Tuple<string, string> tuple)
-        {
-            return Directory.Exists(tuple.Item2) ? ResultType.Success : ResultType.Failure;
-        }
+        private string DirectoryPath = "DirectoryPath";
 
-        protected override string ConstructMessage(Tuple<string, string> tuple, ResultType resultType)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
         {
-            return string.Format("{0} connecting to {1}, path: {2}", resultType.ToString(), tuple.Item1, tuple.Item2);
+            string directoryPath;
+            if (!tuple.Item2.TryGetValue(DirectoryPath, out directoryPath))
+            {
+                return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", DirectoryPath) };
+            }
+            return Directory.Exists(directoryPath)
+                       ? new VerificationResult {Type = ResultType.Success}
+                       : new VerificationResult { Type = ResultType.Failure, Message = "Directory not found"};
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -16,25 +17,27 @@ namespace Core.SpecFlow
         [When("I add the DataBase connection name: (.*), connection: (.*)")]
         public void WhenIAddADatabaseConnection(string name, string connection)
         {
-            Context.AddConnectionToVerify(name, connection);
+            var actions = new Dictionary<string, string>();
+            actions.Add("ConnectionString", connection);
+            Context.AddConnectionToVerify(name, actions);
         }
         
         [Then("the first result message on the screen should be (.*)")]
         public void ThenTheFirstResultMessageShouldBe(string result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().First().Message, result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().First().Message.RemoveEscapeChars());
         }
 
         [Then("the first result verification on the screen should be (.*)")]
         public void ThenTheFirstResultCanConnectShouldBe(ResultType resultType)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().First().Type, resultType);
+            Assert.AreEqual(resultType, Context.GetVerificationStatus().First().Type);
         }
 
         [Then("the count of messages should be (.*)")]
         public void ThenTheCountOfMessagesShouldBe(int result)
         {
-            Assert.AreEqual(Context.GetVerificationStatus().Count(), result);
+            Assert.AreEqual(result, Context.GetVerificationStatus().Count());
         }
     }
 }

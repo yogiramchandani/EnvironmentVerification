@@ -30,7 +30,7 @@ namespace Core
                     verifier = _factory.GetVerifier(item.ItemType);
                     resourceVerifiers.Add(item.ItemType, verifier);
                 }
-                verifier.AddConnectionToVerify(item.Identifier, item.Location);
+                verifier.AddConnectionToVerify(item.Identifier, item.Actions);
             }
 
             var result = new List<VerificationResult>();
