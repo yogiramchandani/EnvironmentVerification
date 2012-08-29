@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.SpecFlow", "Core.SpecF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "Console\ConsoleClient.csproj", "{615EC172-CEE0-43EE-94DF-B8BCEC7B54EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UnitTest", "Core.UnitTest\Core.UnitTest.csproj", "{D42C7ED1-7A8F-4DA3-B244-153A622675B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{615EC172-CEE0-43EE-94DF-B8BCEC7B54EE}.Release|Mixed Platforms.Build.0 = Release|x86
 		{615EC172-CEE0-43EE-94DF-B8BCEC7B54EE}.Release|x86.ActiveCfg = Release|x86
 		{615EC172-CEE0-43EE-94DF-B8BCEC7B54EE}.Release|x86.Build.0 = Release|x86
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D42C7ED1-7A8F-4DA3-B244-153A622675B1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

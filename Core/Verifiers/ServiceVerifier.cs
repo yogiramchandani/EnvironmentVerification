@@ -9,6 +9,7 @@ namespace Core
     {
         ServiceController[] services;
         private string ServicePath = "ServiceName";
+        private string ServiceStatus = "ServiceStatus";
 
         public ServiceVerifier() : base()
         {
@@ -23,8 +24,21 @@ namespace Core
                 return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ServicePath) };
             }
 
-            ServiceController service = services.FirstOrDefault(x => x.ServiceName == serviceName);
-            return service != null && service.Status == ServiceControllerStatus.Running 
+            string serviceStatus;
+            if (!tuple.Item2.TryGetValue(ServiceStatus, out serviceStatus))
+            {
+                return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ServiceStatus) };
+            }
+
+            ServiceControllerStatus status;
+            if (!Enum.TryParse(serviceStatus, true, out status))
+            {
+                return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Service controller status {0} is not a valid ServiceControllerStatus type enum", serviceStatus) };
+            }
+
+            ServiceController service = services.FirstOrDefault(x => x.ServiceName == serviceName && x.Status == status);
+
+            return service != null
                 ? new VerificationResult { Type = ResultType.Success }
                 : new VerificationResult { Type = ResultType.Failure, Message = "Service not found" };
         }

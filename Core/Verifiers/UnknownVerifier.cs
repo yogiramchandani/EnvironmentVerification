@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Core
 {
@@ -12,7 +13,7 @@ namespace Core
 
         protected override string ConstructMessage(Tuple<string, IDictionary<string, string>> tuple, VerificationResult result)
         {
-            return string.Format("{0}: Could not find a valid verifier for name: {1}, location: {2}", result.Type.ToString(), tuple.Item1, tuple.Item2);
+            return string.Format("{0}: Could not find a valid verifier for the following elements: {1}{2}", result.Type.ToString(), Environment.NewLine, ConstructActionMessage(tuple.Item2));
         }
     }
 }

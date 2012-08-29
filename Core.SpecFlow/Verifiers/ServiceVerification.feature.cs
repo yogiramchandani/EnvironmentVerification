@@ -75,10 +75,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have a new ServiceVerifier");
 #line 8
- testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
+ testRunner.When("I add a service with status, connection name: DHCP Service, connection: Dhcp, sta" +
+                    "tus: Running");
 #line 9
- testRunner.Then("the result message should be Success connecting to Levy WCF Service, Key: Service" +
-                    "Name, Value: PPF.Levy.WCFHost");
+ testRunner.Then("the result message should be Success connecting to DHCP Service, Key: ServiceName" +
+                    ", Value: DhcpKey: ServiceStatus, Value: Running");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -93,7 +94,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.Given("I have a new ServiceVerifier");
 #line 13
- testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
+ testRunner.When("I add a service with status, connection name: DHCP Service, connection: Dhcp, sta" +
+                    "tus: Running");
 #line 14
  testRunner.Then("the result status should be Success");
 #line hidden
@@ -110,7 +112,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Given("I have a new ServiceVerifier");
 #line 18
- testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
+ testRunner.When("I add a service with status, connection name: Levy WCF Service, connection: PPF.L" +
+                    "evy.WCFHost, status: Running");
 #line 19
  testRunner.Then("the result count should be 1");
 #line hidden
@@ -127,10 +130,12 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.Given("I have a new ServiceVerifier");
 #line 23
- testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
+ testRunner.When("I add a service with status, connection name: Invalid Service, connection: PPF.Le" +
+                    "vy.Invalid, status: Running");
 #line 24
  testRunner.Then("the result message should be Failure connecting to Invalid Service, Error Message" +
-                    ": Service not found, Key: ServiceName, Value: PPF.Levy.Invalid");
+                    ": Service not found, Key: ServiceName, Value: PPF.Levy.InvalidKey: ServiceStatus" +
+                    ", Value: Running");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -145,7 +150,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Given("I have a new ServiceVerifier");
 #line 28
- testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
+ testRunner.When("I add a service with status, connection name: Invalid Service, connection: PPF.Le" +
+                    "vy.Invalid, status: Running");
 #line 29
  testRunner.Then("the result status should be Failure");
 #line hidden
@@ -162,7 +168,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 32
  testRunner.Given("I have a new ServiceVerifier");
 #line 33
- testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
+ testRunner.When("I add a service with status, connection name: Invalid Service, connection: PPF.Le" +
+                    "vy.Invalid, status: Running");
 #line 34
  testRunner.Then("the result count should be 1");
 #line hidden
@@ -179,9 +186,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 37
  testRunner.Given("I have a new ServiceVerifier");
 #line 38
- testRunner.When("I add a service connection name: Levy WCF Service, connection: PPF.Levy.WCFHost");
+ testRunner.When("I add a service with status, connection name: Levy WCF Service, connection: PPF.L" +
+                    "evy.WCFHost, status: Running");
 #line 39
- testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
+ testRunner.When("I add a service with status, connection name: Invalid Service, connection: PPF.Le" +
+                    "vy.Invalid, status: Running");
 #line 40
  testRunner.When("I add a service connection name: Invalid Service, connection: PPF.Levy.Invalid");
 #line 41

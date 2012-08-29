@@ -15,10 +15,18 @@ namespace Core.SpecFlow
         }
 
         [When("I add a service connection name: (.*), connection: (.*)")]
-        public void WhenIAddAServiceConnection(string name, string connection)
+        public void WhenIAddAServiceWithNoStatus(string name, string connection)
         {
             var actions = new Dictionary<string, string>();
             actions.Add("ServiceName", connection);
+            Context.AddConnectionToVerify(name, actions);
+        }
+        [When("I add a service with status, connection name: (.*), connection: (.*), status: (.*)")]
+        public void WhenIAddAService(string name, string connection, string status)
+        {
+            var actions = new Dictionary<string, string>();
+            actions.Add("ServiceName", connection);
+            actions.Add("ServiceStatus", status);
             Context.AddConnectionToVerify(name, actions);
         }
 

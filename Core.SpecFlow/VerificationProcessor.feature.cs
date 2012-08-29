@@ -232,57 +232,79 @@ this.ScenarioSetup(scenarioInfo);
                         "type",
                         "name",
                         "key",
-                        "value"});
+                        "value",
+                        "key1",
+                        "value1"});
             table6.AddRow(new string[] {
                         "File",
                         "Template",
                         "FilePath",
-                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "File",
                         "Template",
                         "FilePath",
-                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt"});
+                        "D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
                         "DirectoryPath",
-                        "D:\\AppShare\\DataSuite\\Templates"});
+                        "D:\\AppShare\\DataSuite\\Templates",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "Directory",
                         "TemplateDirectory",
                         "DirectoryPath",
-                        "D:\\AppShare\\DataSuite\\Templates"});
+                        "D:\\AppShare\\DataSuite\\Templates",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "Database",
                         "Nirvana",
                         "ConnectionString",
-                        "Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI"});
+                        "Data Source=.\\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "Database",
                         "Marshal",
                         "ConnectionString",
-                        "Data Source=.\\CDR;Initial Catalog=marshal;Integrated Security=SSPI"});
+                        "Data Source=.\\CDR;Initial Catalog=marshal;Integrated Security=SSPI",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "WindowsService",
                         "WinService1",
                         "ServiceName",
-                        "PPF.Levy.WCFHost"});
+                        "Dhcp",
+                        "ServiceStatus",
+                        "Running"});
             table6.AddRow(new string[] {
                         "WindowsService",
                         "WinService2",
                         "ServiceName",
-                        "PPF.Levy.WCFHost"});
+                        "Dhcp",
+                        "ServiceStatus",
+                        "Running"});
             table6.AddRow(new string[] {
                         "Invalid",
                         "Invalid1",
                         "Invalid",
-                        "InvalidLocation1"});
+                        "InvalidLocation1",
+                        "",
+                        ""});
             table6.AddRow(new string[] {
                         "Invalid",
                         "Invalid2",
                         "Invalid",
-                        "InvalidLocation2"});
+                        "InvalidLocation2",
+                        "",
+                        ""});
 #line 45
  testRunner.When("I add items for processing", ((string)(null)), table6);
 #line hidden
@@ -313,10 +335,10 @@ this.ScenarioSetup(scenarioInfo);
                             "og=marshal;Integrated Security=SSPI"});
             table7.AddRow(new string[] {
                         "Success",
-                        "Passed connecting to WinService1, connection string : PPF.Levy.WCFHost"});
+                        "Passed connecting to WinService1, connection string : Dhcp"});
             table7.AddRow(new string[] {
                         "Success",
-                        "Passed connecting to WinService2, connection string : PPF.Levy.WCFHost"});
+                        "Passed connecting to WinService2, connection string : Dhcp"});
             table7.AddRow(new string[] {
                         "Failure",
                         "Failed, Could not find a valid verifier for name: Invalid1, location: InvalidLoca" +

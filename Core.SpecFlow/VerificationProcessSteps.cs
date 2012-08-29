@@ -19,16 +19,20 @@ namespace Core.SpecFlow
         [When("I add items for processing")]
         public void WhenIAddItemsForProcessing(Table items)
         {
-
             foreach (var row in items.Rows)
             {
+                var actions = new Dictionary<string, string> {{row["key"], row["value"]}};
+                if (row.ContainsKey("key1") && !string.IsNullOrEmpty(row["key1"]))
+                {
+                    actions.Add(row["key1"], row["value1"]);
+                }
                 Context.AddResourceItems(new List<IResourceItem<string>>
                                                 {
                                                     new ResourceItem
                                                         {
                                                             ItemType = row["type"],
                                                             Identifier = row["name"],
-                                                            Actions = new Dictionary<string, string> {{row["key"], row["value"]}}
+                                                            Actions = actions
                                                         }
                                                 });
             }
@@ -40,8 +44,8 @@ namespace Core.SpecFlow
             var expected = new List<VerificationResult>(items.CreateSet<VerificationResult>());
             var actual = Context.ProcessResources();
 
-            Assert.AreEqual(actual.Count(x => x.Type == ResultType.Success), expected.Count(x => x.Type == ResultType.Success));
-            Assert.AreEqual(actual.Count(x => x.Type == ResultType.Failure), expected.Count(x => x.Type == ResultType.Failure));
+            Assert.AreEqual(expected.Count(x => x.Type == ResultType.Success), actual.Count(x => x.Type == ResultType.Success));
+            Assert.AreEqual(expected.Count(x => x.Type == ResultType.Failure), actual.Count(x => x.Type == ResultType.Failure));
         }
 
 
