@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using Ninject;
 
 namespace Core
 {
     public class CompositeVerifier<TResourceType> : IVerificationInvoker
     {
+        [Inject]
+        public ILog Logger { get; set; }
         readonly IResourceItemParser<TResourceType> _parser;
         readonly IVerificationProcessor<TResourceType> _processor;
 
@@ -38,6 +41,7 @@ namespace Core
 
     public interface IVerificationInvoker
     {
+        ILog Logger { get; set; }
         List<VerificationResult> VerifyEnvironment(VerificationResult validationResult);
     }
 }

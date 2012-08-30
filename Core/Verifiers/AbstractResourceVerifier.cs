@@ -24,8 +24,16 @@ namespace Core
             
             foreach (var tuple in connectionList)
             {
-                VerificationResult resultType = Verify(tuple);
-
+                VerificationResult resultType;
+                if (tuple.Item2 == null || tuple.Item2.Count == 0)
+                {
+                    resultType = new VerificationResult{Message = "The actions specified are invalid", Type = ResultType.Failure};
+                }
+                else
+                {
+                    resultType = Verify(tuple);    
+                }
+                
                 string message = ConstructMessage(tuple, resultType);
                 result.Add(new VerificationResult {Type = resultType.Type, Message = message});
             }
@@ -44,9 +52,13 @@ namespace Core
         protected virtual string ConstructActionMessage(IDictionary<string, string> actions)
         {
             var actionMessage = new StringBuilder();
-            foreach (KeyValuePair<string, string> action in actions)
+
+            if (actions != null && actions.Count > 0)
             {
-                actionMessage.AppendLine(string.Format("Key: {0}, Value: {1}", action.Key, action.Value));
+                foreach (KeyValuePair<string, string> action in actions)
+                {
+                    actionMessage.AppendLine(string.Format("Key: {0}, Value: {1}", action.Key, action.Value));
+                }    
             }
 
             return actionMessage.ToString();

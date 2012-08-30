@@ -1,13 +1,12 @@
 using System;
 using Ninject;
-using Ninject.Extensions.Logging;
 
 namespace Core
 {
     public abstract class AbstractParser<T> : IParser where T:Exception
     {
         [Inject]
-        public ILogger logger { protected get; set; }
+        public ILog Logger { get; set; }
 
         public virtual VerificationResult Parse()
         {
@@ -17,7 +16,9 @@ namespace Core
             }
             catch(T e)
             {
-                return new VerificationResult { Message = ConstructExceptionMessage(e), Type = ResultType.Failure };
+                string message = ConstructExceptionMessage(e);
+                Logger.Fatal(e, message);
+                return new VerificationResult { Message = message, Type = ResultType.Failure };
             }
         }
 
@@ -28,6 +29,8 @@ namespace Core
 
     public interface IParser
     {
+        ILog Logger { get; set; }
+
         VerificationResult Parse();
     }
 }

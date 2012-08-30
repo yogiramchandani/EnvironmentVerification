@@ -17,14 +17,16 @@
 		"ItemType" : "WindowsService",
 		"Identifier" : "DHCP",
 		"Actions" : {
-							"ServiceName" : "Dhcp"
+							"ServiceName" : "Dhcp",
+							"ServiceStatus" : "Running"
 					}
 	}, 
 	{
 		"ItemType" : "Test",
 		"Identifier" : "TestInvalid",
 		"Actions" : {
-							"ServicePath" : "PPF.Levy.WCFHost"
+							"ServicePath" : "PPF.Levy.WCFHost",
+							"ServiceStatus" : "Running"
 					}
 	}
 ]

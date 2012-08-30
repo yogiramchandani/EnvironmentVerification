@@ -1,11 +1,16 @@
-﻿using System;
-using Ninject.Extensions.Logging;
+using System;
 using NLog;
+using Ninject.Extensions.Logging;
 
-namespace ConsoleClient
+namespace Core
 {
-    public class Log : Logger, ILogger
+    public class Log : Logger, ILog
     {
+        public new void Error(string message)
+        {
+            base.Error(message);
+        }
+
         public void Debug(Exception exception, string format, params object[] args)
         {
             throw new NotImplementedException();
@@ -37,5 +42,10 @@ namespace ConsoleClient
         }
 
         public Type Type { get; private set; }
+    }
+
+    public interface ILog : ILogger
+    {
+        new void Error(string message);
     }
 }

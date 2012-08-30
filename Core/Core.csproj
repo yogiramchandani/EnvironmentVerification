@@ -42,6 +42,9 @@
     <Reference Include="Ninject.Extensions.Logging">
       <HintPath>..\packages\Ninject.Extensions.Logging.3.0.1.0\lib\net40\Ninject.Extensions.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -55,6 +58,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Log.cs" />
     <Compile Include="Parsers\AbstractParser.cs" />
     <Compile Include="Parsers\FileReader.cs" />
     <Compile Include="Parsers\IResourceItemParser.cs" />

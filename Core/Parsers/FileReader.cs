@@ -16,7 +16,9 @@ namespace Core
         {
             if (!File.Exists(_filePath))
             {
-                return new VerificationResult { Message = "The file does not exist", Type = ResultType.Failure };
+                string message = string.Format("The file '{0}' does not exist", _filePath);
+                Logger.Error(message);
+                return new VerificationResult { Message = message, Type = ResultType.Failure };
             }
 
             using (TextReader reader = File.OpenText(_filePath))

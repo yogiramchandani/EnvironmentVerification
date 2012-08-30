@@ -1,36 +1,36 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 using Core;
-using NLog;
 using Ninject;
-using Ninject.Extensions.Logging;
 using Ninject.Parameters;
+using NLog;
 
 namespace ConsoleClient
 {
     class Program
     {
         [Inject]
-        public ILogger logger { private get; set; }
+        public ILog Logger { get; set; }
 
         static void Main(string[] args)
         {
             IKernel kernel = new StandardKernel();
-            kernel.Bind<ILogger>().ToMethod(
+
+            // Container Register
+            kernel.Bind<ILog>().ToMethod(
                 x =>
                     {
                         var scope = x.Request.ParentRequest.Service.FullName;
-                        var log = (ILogger) LogManager.GetLogger(scope, typeof (Log));
+                        var log = (ILog)LogManager.GetLogger(scope, typeof(Log));
                         return log;
                     });
-
             kernel.Bind<IParser>().To<FileParser>();
             kernel.Bind<IResourceItemParser<string>>().To<JsonResourceItemParser>();
             kernel.Bind<IVerificationProcessor<string>>().To<VerificationProcessor<string>>()
                 .WithConstructorArgument("factory", new StringTypeResourceVerifierFactory());
             kernel.Bind<IVerificationInvoker>().To<CompositeVerifier<string>>();
             
+            // Container Resolve
             IParser fileReader = kernel.Get<IParser>(new ConstructorArgument("filePath", args.First()));
             VerificationResult jsonStringFromFile = fileReader.Parse();
             IResourceItemParser<string> parser = kernel.Get<IResourceItemParser<string>>();
@@ -50,6 +50,12 @@ namespace ConsoleClient
 
             Console.WriteLine("Done ...");
             Console.ReadKey();
+
+            // Container Release
+            kernel.Release(invoker);
+            kernel.Release(processor);
+            kernel.Release(parser);
+            kernel.Release(fileReader);
         }
 
         private static ConsoleColor GetColour(ResultType actual)
