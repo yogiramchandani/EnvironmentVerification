@@ -16,16 +16,16 @@ namespace Core
             services = ServiceController.GetServices();
         }
 
-        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> serviceItems)
         {
             string serviceName;
-            if (!tuple.Item2.TryGetValue(ServicePath, out serviceName))
+            if (!serviceItems.Item2.TryGetValue(ServicePath, out serviceName))
             {
                 return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ServicePath) };
             }
 
             string serviceStatus;
-            if (!tuple.Item2.TryGetValue(ServiceStatus, out serviceStatus))
+            if (!serviceItems.Item2.TryGetValue(ServiceStatus, out serviceStatus))
             {
                 return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ServiceStatus) };
             }

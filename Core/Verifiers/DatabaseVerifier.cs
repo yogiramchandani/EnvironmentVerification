@@ -10,14 +10,14 @@ namespace Core
     {
         private string ConnectionString = "ConnectionString";
 
-        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> dbConnectionItems)
         {
             ResultType resultType = ResultType.Failure;
             SqlConnection connection = null;
             try
             {
                 string connectionString = string.Empty;
-                if (!tuple.Item2.TryGetValue(ConnectionString, out connectionString))
+                if (!dbConnectionItems.Item2.TryGetValue(ConnectionString, out connectionString))
                 {
                     return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", ConnectionString) };
                 }

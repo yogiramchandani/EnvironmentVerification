@@ -50,9 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractResourceVerifierTest.cs" />
-    <Compile Include="LogTest.cs" />
-    <Compile Include="UnknownVerifierTest.cs" />
+    <Compile Include="Verifiers\AbstractResourceVerifierTest.cs" />
+    <Compile Include="Infrastructure\LogTest.cs" />
+    <Compile Include="StringFunctionsTest.cs" />
+    <Compile Include="Verifiers\UnknownVerifierTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VerificationProcessorTest.cs" />
   </ItemGroup>

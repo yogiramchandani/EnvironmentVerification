@@ -9,9 +9,9 @@ namespace Core
         public IDictionary<string, string> Actions { get; set; }
     }
 
-    public interface IResourceItem<T>
+    public interface IResourceItem<TItemType>
     {
-        T ItemType { get; set; }
+        TItemType ItemType { get; set; }
         string Identifier { get; set; }
         IDictionary<string, string> Actions { get; set; }
     }

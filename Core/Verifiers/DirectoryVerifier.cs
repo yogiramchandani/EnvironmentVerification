@@ -8,10 +8,10 @@ namespace Core
     {
         private string DirectoryPath = "DirectoryPath";
 
-        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> tuple)
+        protected override VerificationResult Verify(Tuple<string, IDictionary<string, string>> directoryItems)
         {
             string directoryPath;
-            if (!tuple.Item2.TryGetValue(DirectoryPath, out directoryPath))
+            if (!directoryItems.Item2.TryGetValue(DirectoryPath, out directoryPath))
             {
                 return new VerificationResult { Type = ResultType.Failure, Message = string.Format("Key {0} not found", DirectoryPath) };
             }

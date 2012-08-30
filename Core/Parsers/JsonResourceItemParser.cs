@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 
 namespace Core
 {
+    /// <summary>
+    /// This takes a string blob and parses the Json string into a List of Resource items
+    /// </summary>
     public class JsonResourceItemParser : AbstractParser<JsonException>, IResourceItemParser<string>
     {
         public List<IResourceItem<string>> ResourceList { get; set; }

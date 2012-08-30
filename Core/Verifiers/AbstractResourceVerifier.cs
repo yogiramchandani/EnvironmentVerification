@@ -1,9 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Core
 {
+    /// <summary>
+    /// A resource verifier takes a connection to a system resource and performs a set of actions
+    /// against them, eg: A file system verifier may take a file path (action), security rights (action),
+    /// file modified date (action) and verify the actions against the file system
+    /// 
+    /// </summary>
+    public interface IResourceVerifier
+    {
+        void AddConnectionToVerify(string key, IDictionary<string, string> actions);
+        List<VerificationResult> GetVerificationStatus();
+    }
+
+    /// <summary>
+    /// The abstract verifier holds the list of connections to be verified, it iterated through the list
+    /// and verifies each connection, aggregates the results (constructs the messages) and returns a
+    /// result list.
+    /// </summary>
     public abstract class AbstractResourceVerifier : IResourceVerifier
     {
         protected IList<Tuple<string, IDictionary<string, string>>> connectionList;
@@ -22,19 +40,26 @@ namespace Core
         {
             var result = new List<VerificationResult>();
             
-            foreach (var tuple in connectionList)
+            // for each connection in the list
+            foreach (var connection in connectionList)
             {
                 VerificationResult resultType;
-                if (tuple.Item2 == null || tuple.Item2.Count == 0)
+                var actions = connection.Item2;
+
+                // if the action list is empty then raise an error
+                if (actions == null || actions.Count == 0)
                 {
                     resultType = new VerificationResult{Message = "The actions specified are invalid", Type = ResultType.Failure};
                 }
                 else
                 {
-                    resultType = Verify(tuple);    
+                    // else verify the connection
+                    resultType = Verify(connection);    
                 }
                 
-                string message = ConstructMessage(tuple, resultType);
+                // construct the verification result message
+                string message = ConstructMessage(connection, resultType);
+                // aggregate the results
                 result.Add(new VerificationResult {Type = resultType.Type, Message = message});
             }
             return result;
@@ -60,12 +85,8 @@ namespace Core
             if (actions != null && actions.Count > 0)
             {
                 actionMessage.AppendLine();
-                foreach (KeyValuePair<string, string> action in actions)
-                {
-                    actionMessage.AppendLine(string.Format("Key: {0}, Value: {1}", action.Key, action.Value));
-                }    
+                actions.ToList().ForEach(action => actionMessage.AppendLine(string.Format("Key: {0}, Value: {1}", action.Key, action.Value)));
             }
-
             return actionMessage.ToString();
         }
     }

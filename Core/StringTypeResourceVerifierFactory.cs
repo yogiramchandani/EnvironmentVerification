@@ -1,5 +1,8 @@
 namespace Core
 {
+    /// <summary>
+    /// Returns a Verifier based on the type string
+    /// </summary>
     public class StringTypeResourceVerifierFactory : IResourceVerifierFactory<string>
     {
         public IResourceVerifier GetVerifier(string type)

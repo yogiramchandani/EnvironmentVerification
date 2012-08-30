@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Core
 {
+    /// <summary>
+    /// Parses a file and stores the result in a string blob
+    /// </summary>
     public class FileParser : AbstractParser<Exception>
     {
         private string _filePath;
