@@ -10,6 +10,7 @@ namespace Core.SpecFlow
         public void WhenICreateANewFileReaderWithPath(string file)
         {
             Context = new FileParser(file);
+            Context.Logger = new TestLogger();
         }
 
         [When(@"I call validate file")]

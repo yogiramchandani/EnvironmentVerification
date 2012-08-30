@@ -28,7 +28,7 @@ Scenario: When a valid Json string is passed with 1 File and 2 Directory includi
 	Then the Json result for type WindowsService should have a count of 1
 	Then the Json result for type Test should have a count of 1
 
-Scenario: When a invalid Json string is passed expect an error
+Scenario: When an invalid Json string is passed expect an error
 	Given I have a new JsonResourceItemProcessor
 	When I add string for Json processing "sdfsdfsdf sdfs dfsd fsd fsdf sdfsdf"
 	Then the Json result type should be Failure

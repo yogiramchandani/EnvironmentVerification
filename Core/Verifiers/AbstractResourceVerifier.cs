@@ -44,9 +44,13 @@ namespace Core
 
         protected virtual string ConstructMessage(Tuple<string, IDictionary<string, string>> tuple, VerificationResult result)
         {
+            string itemIdentifier = string.IsNullOrWhiteSpace(tuple.Item1)
+                                    ? "{Error reading the item's identifier, it may be empty or have the an invalid placeholder}"
+                                    : tuple.Item1;
+
             return result.Type == ResultType.Failure
-               ? string.Format("{0} connecting to {1}, Error Message: {2}, {3}", result.Type.ToString(), tuple.Item1, result.Message, ConstructActionMessage(tuple.Item2))
-               : string.Format("{0} connecting to {1}, {2}", result.Type.ToString(), tuple.Item1, ConstructActionMessage(tuple.Item2));
+               ? string.Format("{0} verifying {1}, Error Message: {2}, {3}", result.Type.ToString(), itemIdentifier, result.Message, ConstructActionMessage(tuple.Item2))
+               : string.Format("{0} verifying {1}, {2}", result.Type.ToString(), itemIdentifier, ConstructActionMessage(tuple.Item2));
         }
 
         protected virtual string ConstructActionMessage(IDictionary<string, string> actions)
@@ -55,6 +59,7 @@ namespace Core
 
             if (actions != null && actions.Count > 0)
             {
+                actionMessage.AppendLine();
                 foreach (KeyValuePair<string, string> action in actions)
                 {
                     actionMessage.AppendLine(string.Format("Key: {0}, Value: {1}", action.Key, action.Value));

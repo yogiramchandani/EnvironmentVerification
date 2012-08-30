@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Core
 {
-    public class VerificationProcessor<T> : IVerificationProcessor<T>
+    public class VerificationProcessor<T> : IVerificationProcessor<T> where T : class
     {
         private List<IResourceItem<T>> _resourceItems;
         private IResourceVerifierFactory<T> _factory;
@@ -21,19 +21,26 @@ namespace Core
 
         public List<VerificationResult> ProcessResources()
         {
+            var result = new List<VerificationResult>();
             var resourceVerifiers = new Dictionary<T, IResourceVerifier>();
             foreach (IResourceItem<T> item in _resourceItems)
             {
-                IResourceVerifier verifier;
-                if (!resourceVerifiers.TryGetValue(item.ItemType, out verifier))
+                if (item.ItemType == null)
                 {
-                    verifier = _factory.GetVerifier(item.ItemType);
-                    resourceVerifiers.Add(item.ItemType, verifier);
+                    result.Add(new VerificationResult{Message = "The Item Type field is null or mis-named please check the input", Type = ResultType.Failure});
                 }
-                verifier.AddConnectionToVerify(item.Identifier, item.Actions);
+                else
+                {
+                    IResourceVerifier verifier;
+                    if (!resourceVerifiers.TryGetValue(item.ItemType, out verifier))
+                    {
+                        verifier = _factory.GetVerifier(item.ItemType);
+                        resourceVerifiers.Add(item.ItemType, verifier);
+                    }
+                    verifier.AddConnectionToVerify(item.Identifier, item.Actions);
+                }
             }
-
-            var result = new List<VerificationResult>();
+            
             resourceVerifiers.Values.ToList().ForEach(x => result.AddRange(x.GetVerificationStatus()));
 
             return result;

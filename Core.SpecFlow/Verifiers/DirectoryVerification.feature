@@ -6,7 +6,7 @@
 Scenario: For an existing directory, check the result message
 	Given I have a new DirectoryVerifier
 	When I add a directory path, identifier: Templates, path: D:\AppShare\DataSuite\Templates
-	Then the directory verification result message should be Success connecting to Templates, Key: DirectoryPath, Value: D:\AppShare\DataSuite\Templates
+	Then the directory verification result message should be Success verifying Templates, Key: DirectoryPath, Value: D:\AppShare\DataSuite\Templates
 
 Scenario: For an existing directory, check the result type
 	Given I have a new DirectoryVerifier
@@ -21,7 +21,7 @@ Scenario: For an existing directory, check the result count
 Scenario: For a non existent directory, check the result message
 	Given I have a new DirectoryVerifier
 	When I add a directory path, identifier: Invalid, path: D:\AppShare\DataSuite\Invalid
-	Then the directory verification result message should be Failure connecting to Invalid, Error Message: Directory not found, Key: DirectoryPath, Value: D:\AppShare\DataSuite\Invalid
+	Then the directory verification result message should be Failure verifying Invalid, Error Message: Directory not found, Key: DirectoryPath, Value: D:\AppShare\DataSuite\Invalid
 
 Scenario: For a non existent directory, check the result type
 	Given I have a new DirectoryVerifier

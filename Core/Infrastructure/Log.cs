@@ -13,32 +13,32 @@ namespace Core
 
         public void Debug(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            DebugException(format, exception);
         }
 
         public void Info(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            InfoException(format, exception);
         }
 
         public void Trace(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            TraceException(format, exception);
         }
 
         public void Warn(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            WarnException(format, exception);
         }
 
         public void Error(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            ErrorException(format, exception);
         }
 
         public void Fatal(Exception exception, string format, params object[] args)
         {
-            throw new NotImplementedException();
+            FatalException(format, exception);
         }
 
         public Type Type { get; private set; }

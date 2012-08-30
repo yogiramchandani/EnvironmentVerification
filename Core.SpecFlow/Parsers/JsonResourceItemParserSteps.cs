@@ -11,6 +11,7 @@ namespace Core.SpecFlow
         public void GivenIHaveANewJsonResourceItemProcessor()
         {
             var parser = new JsonResourceItemParser();
+            parser.Logger = new TestLogger();
             ScenarioContext.Current.Set(parser);
         }
 

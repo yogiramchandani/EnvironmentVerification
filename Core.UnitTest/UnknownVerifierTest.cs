@@ -7,6 +7,9 @@ namespace Core.UnitTest
     [TestFixture]
     public class UnknownVerifierTest : UnknownVerifier
     {
+        public UnknownVerifierTest() : base("Test"){}
+        public UnknownVerifierTest(string verifierName) : base(verifierName) { }
+
         [Test]
         public void ConstructMessage_Where2ElementsExistInTheDictionary_ExpectTheDictionaryListInMessage()
         {
@@ -17,7 +20,16 @@ namespace Core.UnitTest
                                                                                        {"Item2", "Action2"}
                                                                                    }),
                 new VerificationResult {Type = ResultType.Failure});
-            Assert.AreEqual("Failure: Could not find a valid verifier for the following elements: \r\nKey: Item1, Value: Action1\r\nKey: Item2, Value: Action2\r\n", actual);
+            Assert.AreEqual("Failure: Could not find a valid verifier for 'Test' with the following elements: \r\nKey: Item1, Value: Action1\r\nKey: Item2, Value: Action2\r\n", actual);
+        }
+
+        [Test]
+        public void CallConstructor_ProvideAStringForTheVerifierName_ExpectTheVerifierNamePropertySet()
+        {
+            string verifierName = "TestVerifier";
+            var mut = new UnknownVerifierTest(verifierName);
+
+            Assert.AreEqual(verifierName, mut.VerifierName);
         }
     }
 }

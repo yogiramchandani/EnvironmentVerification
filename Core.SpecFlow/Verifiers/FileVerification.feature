@@ -6,7 +6,7 @@
 Scenario: For an existing File, check the result message
 	Given I have a new FileVerifier
 	When I add a File path, identifier: Templates, path: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt
-	Then the File verification result message should be Success connecting to Templates, Key: FilePath, Value: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt
+	Then the File verification result message should be Success verifying Templates, Key: FilePath, Value: D:\AppShare\DataSuite\Templates\UtilFunctions.xslt
 
 Scenario: For an existing File, check the result type
 	Given I have a new FileVerifier
@@ -21,7 +21,7 @@ Scenario: For an existing File, check the result count
 Scenario: For a non existent File, check the result message
 	Given I have a new FileVerifier
 	When I add a File path, identifier: Invalid, path: D:\AppShare\DataSuite\Invalid\UtilFunctions.xslt
-	Then the File verification result message should be Failure connecting to Invalid, Error Message: File not found, Key: FilePath, Value: D:\AppShare\DataSuite\Invalid\UtilFunctions.xslt
+	Then the File verification result message should be Failure verifying Invalid, Error Message: File not found, Key: FilePath, Value: D:\AppShare\DataSuite\Invalid\UtilFunctions.xslt
 
 Scenario: For a non existent File, check the result type
 	Given I have a new FileVerifier

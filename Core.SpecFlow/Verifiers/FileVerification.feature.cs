@@ -78,8 +78,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a File path, identifier: Templates, path: D:\\AppShare\\DataSuite\\Templates\\U" +
                     "tilFunctions.xslt");
 #line 9
- testRunner.Then("the File verification result message should be Success connecting to Templates, K" +
-                    "ey: FilePath, Value: D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt");
+ testRunner.Then("the File verification result message should be Success verifying Templates, Key: " +
+                    "FilePath, Value: D:\\AppShare\\DataSuite\\Templates\\UtilFunctions.xslt");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -133,9 +133,9 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a File path, identifier: Invalid, path: D:\\AppShare\\DataSuite\\Invalid\\UtilF" +
                     "unctions.xslt");
 #line 24
- testRunner.Then("the File verification result message should be Failure connecting to Invalid, Err" +
-                    "or Message: File not found, Key: FilePath, Value: D:\\AppShare\\DataSuite\\Invalid\\" +
-                    "UtilFunctions.xslt");
+ testRunner.Then("the File verification result message should be Failure verifying Invalid, Error M" +
+                    "essage: File not found, Key: FilePath, Value: D:\\AppShare\\DataSuite\\Invalid\\Util" +
+                    "Functions.xslt");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -94,7 +94,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.And("I call validate file");
 #line 14
- testRunner.Then("the validation result content should be \"The file does not exist\"");
+ testRunner.Then("the validation result content should be \"The file \'.\\InvalidTestFile.txt\' does no" +
+                    "t exist\"");
 #line hidden
             this.ScenarioCleanup();
         }

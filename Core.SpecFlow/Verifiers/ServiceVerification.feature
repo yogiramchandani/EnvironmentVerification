@@ -6,7 +6,7 @@
 Scenario: For an existing service, check the result message
 	Given I have a new ServiceVerifier
 	When I add a service with status, connection name: DHCP Service, connection: Dhcp, status: Running
-	Then the result message should be Success connecting to DHCP Service, Key: ServiceName, Value: DhcpKey: ServiceStatus, Value: Running
+	Then the result message should be Success verifying DHCP Service, Key: ServiceName, Value: DhcpKey: ServiceStatus, Value: Running
 
 Scenario: For an existing service, check the result type
 	Given I have a new ServiceVerifier
@@ -21,7 +21,7 @@ Scenario: For an existing service, check the result count
 Scenario: For a non existent service, check the result message
 	Given I have a new ServiceVerifier
 	When I add a service with status, connection name: Invalid Service, connection: PPF.Levy.Invalid, status: Running
-	Then the result message should be Failure connecting to Invalid Service, Error Message: Service not found, Key: ServiceName, Value: PPF.Levy.InvalidKey: ServiceStatus, Value: Running
+	Then the result message should be Failure verifying Invalid Service, Error Message: Service not found, Key: ServiceName, Value: PPF.Levy.InvalidKey: ServiceStatus, Value: Running
 
 Scenario: For a non existent service, check the result type
 	Given I have a new ServiceVerifier

@@ -78,8 +78,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a service with status, connection name: DHCP Service, connection: Dhcp, sta" +
                     "tus: Running");
 #line 9
- testRunner.Then("the result message should be Success connecting to DHCP Service, Key: ServiceName" +
-                    ", Value: DhcpKey: ServiceStatus, Value: Running");
+ testRunner.Then("the result message should be Success verifying DHCP Service, Key: ServiceName, Va" +
+                    "lue: DhcpKey: ServiceStatus, Value: Running");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -133,9 +133,9 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I add a service with status, connection name: Invalid Service, connection: PPF.Le" +
                     "vy.Invalid, status: Running");
 #line 24
- testRunner.Then("the result message should be Failure connecting to Invalid Service, Error Message" +
-                    ": Service not found, Key: ServiceName, Value: PPF.Levy.InvalidKey: ServiceStatus" +
-                    ", Value: Running");
+ testRunner.Then("the result message should be Failure verifying Invalid Service, Error Message: Se" +
+                    "rvice not found, Key: ServiceName, Value: PPF.Levy.InvalidKey: ServiceStatus, Va" +
+                    "lue: Running");
 #line hidden
             this.ScenarioCleanup();
         }

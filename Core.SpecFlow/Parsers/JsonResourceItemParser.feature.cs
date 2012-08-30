@@ -144,10 +144,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("When a invalid Json string is passed expect an error")]
-        public virtual void WhenAInvalidJsonStringIsPassedExpectAnError()
+        [NUnit.Framework.DescriptionAttribute("When an invalid Json string is passed expect an error")]
+        public virtual void WhenAnInvalidJsonStringIsPassedExpectAnError()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a invalid Json string is passed expect an error", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When an invalid Json string is passed expect an error", ((string[])(null)));
 #line 31
 this.ScenarioSetup(scenarioInfo);
 #line 32

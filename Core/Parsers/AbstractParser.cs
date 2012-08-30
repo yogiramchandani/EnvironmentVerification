@@ -17,7 +17,7 @@ namespace Core
             catch(T e)
             {
                 string message = ConstructExceptionMessage(e);
-                Logger.Fatal(e, message);
+                Logger.Error(e, message);
                 return new VerificationResult { Message = message, Type = ResultType.Failure };
             }
         }

@@ -11,7 +11,7 @@ Scenario: Get Failure validation type for reading an invalid file
 Scenario: Get validation message for reading an invalid file
 	When I create a new file reader with path ".\InvalidTestFile.txt"
 	And I call validate file
-	Then the validation result content should be "The file does not exist"
+	Then the validation result content should be "The file '.\InvalidTestFile.txt' does not exist"
 
 Scenario: Get Success validation type for reading a valid file
 	When I create a new file reader with path "..\..\SampleFiles\ValidFile.txt"

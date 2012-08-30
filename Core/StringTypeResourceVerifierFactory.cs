@@ -20,7 +20,7 @@ namespace Core
             {
                 return new ServiceVerifier();
             }
-            return new UnknownVerifier();
+            return new UnknownVerifier(type);
         }
     }
 

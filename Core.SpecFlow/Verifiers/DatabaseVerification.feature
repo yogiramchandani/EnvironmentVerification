@@ -6,7 +6,7 @@
 Scenario: For an existing database check the result string
 	Given I have a new DatabaseVerifier
 	When I add the DataBase connection name: Nirvana, connection: Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI
-	Then the first result message on the screen should be Success connecting to Nirvana, Key: ConnectionString, Value: Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI
+	Then the first result message on the screen should be Success verifying Nirvana, Key: ConnectionString, Value: Data Source=.\CDR;Initial Catalog=nirvana_small;Integrated Security=SSPI
 	
 Scenario: For an existing database check if result type
 	Given I have a new DatabaseVerifier
@@ -21,7 +21,7 @@ Scenario: For an existing database check the result count
 Scenario: For a non existent database check the result string
 	Given I have a new DatabaseVerifier
 	When I add the DataBase connection name: NirvanaNotExists, connection: Data Source=.\CDR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI
-	Then the first result message on the screen should be Failure connecting to NirvanaNotExists, Error Message: , Key: ConnectionString, Value: Data Source=.\CDR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI
+	Then the first result message on the screen should be Failure verifying NirvanaNotExists, Error Message: , Key: ConnectionString, Value: Data Source=.\CDR;Initial Catalog=nirvana_notExists;Integrated Security=SSPI
 
 Scenario: For a non existent database check if result type
 	Given I have a new DatabaseVerifier

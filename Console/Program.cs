@@ -45,6 +45,7 @@ namespace ConsoleClient
             {
                 Console.ForegroundColor = GetColour(verificationResult.Type);
                 Console.WriteLine(string.Format("{0}", verificationResult.Message));
+                Console.WriteLine();
                 Console.ResetColor();
             }
 
