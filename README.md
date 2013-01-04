@@ -1,6 +1,6 @@
 # Environment Verifier
 
-The **Environment Verifier** is a tool that helps users verify if an environment (e.g.: desktop, server etc) has certain pre-requisites (e.g.: files, databases, Windows Services etc) in place.
+The **Environment Verifier** is a tool that helps users verify if a Windows 7 instance (local or remote) has certain pre-requisites (e.g.: files, databases, Windows Services etc) in place.
 
 ## Check for pre-requisites before deploying your app
 
