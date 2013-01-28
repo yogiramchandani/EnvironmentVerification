@@ -1,4 +1,5 @@
 # Environment Verifier
+A project to play with SpecFlow and Ninject.
 
 The **Environment Verifier** is a tool that helps users verify if a Windows 7 instance (local or remote) has certain pre-requisites (e.g.: files, databases, Windows Services etc) in place.
 
