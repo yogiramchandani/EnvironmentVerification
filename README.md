@@ -8,6 +8,6 @@ The **Environment Verifier** is a tool that helps users verify if a Windows 7 in
 Most applications require a machine to be 'prepped' before installation. This tool reads in a file and verifies system resources.
 
 e.g: 
-- A Windows service might be verifies against a Name (Dhcp) and a Status (Running)
-- A File system can be verifies against a file name (C:\Windows\hh.exe)
+- A Windows service might be verified against a Name (Dhcp) and a Status (Running)
+- A File system can be verified against a file name (C:\Windows\hh.exe)
 
